@@ -11,7 +11,7 @@ GameObject:
   - 82: {fileID: 8200000}
   - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: Boing
+  m_Name: Dead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ AudioSource:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: b900627a3fb82c843ba2000ecbc6f2d5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c152aafbd7ae44741b733ddd4db6a923, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

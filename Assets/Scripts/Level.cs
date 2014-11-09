@@ -150,7 +150,7 @@ public class Level{
 				string[] RELineSplit = RELine.Split (' ');
 				for (int j = 0; j < RELineSplit.Length; j++) {
 					string[] RE = RELineSplit[j].Split(',');
-					towerPositions.Add(new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0));
+					towerPositions.Add(new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), -1));
 				}
 				break;
 			}

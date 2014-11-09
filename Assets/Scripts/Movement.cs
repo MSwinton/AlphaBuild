@@ -9,10 +9,16 @@ public class Movement : Splodeable {
 	protected Vector3 pushedVelocity;
 	protected bool pushed;
 	public float acceleration = 15;
+	public GameObject dieAudio;
+	bool lost;
 	void Start(){
 		speed = baseSpeed;
+		lost = false;
 	}
 	void Update(){
+		if(lost){
+			return;
+		}
 		float t = Time.deltaTime;
 		if(slowTime > 0){
 			slowTime -= t;
@@ -66,8 +72,15 @@ public class Movement : Splodeable {
 	{
 		speed = baseSpeed;
 	}
-	public void lose(){//what happens when you lose
-		//Destroy(gameObject);
+	IEnumerator loseIn2() {
+		yield return new WaitForSeconds(2);
 		Application.LoadLevel (Application.loadedLevelName);
+	}
+	public void lose(){//what happens when you lose
+		if(!lost){
+			Instantiate(dieAudio);
+			StartCoroutine(loseIn2());
+			lost = true;
+		}
 	}
 }

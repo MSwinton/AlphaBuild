@@ -9,7 +9,7 @@ public abstract class Enemy : Splodeable {
 	public float aggroRadius = 1;
 	public float killRadius = 1;
 	public float slowTime = 5;
-	protected Vector3 destLocation; //to find the player and kill it!!!
+	public Vector3 destLocation; //to find the player and kill it!!!
 	public GameObject player;
 	public bool inLineOfSight = false;
 	protected Invisibility playerInvisibility;
