@@ -43,6 +43,7 @@ public class Spawn_GUI : MonoBehaviour {
 		style.normal.textColor = Color.white;
 		style.hover.textColor  = Color.cyan;
 		style.active.textColor = Color.red;
+		if(player != null){
 
 		if (GUI.Button (new Rect (width_Offset + button_Offset , height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
 		                "1 Push (" + player.GetComponent<PlacePushMine>().numMines + ")", style)){
@@ -101,6 +102,7 @@ public class Spawn_GUI : MonoBehaviour {
 		if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f), 
 		               "Invis: " + Mathf.Round (player.GetComponent<Invisibility>().invisijuice * 10) / 10 + "s" )) {
 			
+		}
 		}
 		/*if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),"Menu ", style)) {
 			

@@ -23,7 +23,7 @@ public class Explode : MonoBehaviour {
 		timer += Time.deltaTime;
 	}
 	void OnTriggerStay2D(Collider2D other){
-		if (other.tag != "Barrier"){
+		if (other.tag != "Barrier" && other.tag!="LineOfSight"){
 			Destroy(other.gameObject);
 		}
 }
