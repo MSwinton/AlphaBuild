@@ -11,12 +11,21 @@ public class CameraMovement : MonoBehaviour {
 	void Start () {
 		offset = transform.position;
 		camera.orthographicSize = frameSize;
+
 	}
-	
+	IEnumerator loseIn2() {
+		yield return new WaitForSeconds(2);
+		Application.LoadLevel (Application.loadedLevelName);
+	}
 	// Update is called once per frame
 	void Update () {
+		if(Input.GetKeyDown(KeyCode.R)){
+			Application.LoadLevel(Application.loadedLevelName);
+		}
+		player = GameObject.FindGameObjectWithTag ("Player");
 		if (player == null) {
-			player = GameObject.FindGameObjectWithTag ("Player");
+			StartCoroutine(loseIn2());
+			//player = GameObject.FindGameObjectWithTag ("Player");
 		
 		}if (player != null) {
 	

@@ -7,7 +7,7 @@ public class PounceEnemy : Enemy {
 	public float pounceRadius;
 	public bool pouncing;
 	public float pounceMod;
-	private float pounceTime;
+
 	void Start () {
 		pouncing = false;
 		base.init();
@@ -18,7 +18,6 @@ public class PounceEnemy : Enemy {
 		aggrod = false;
 		destLocation = this.transform.position;
 		cooldown = 0.0f;
-		pounceTime = 0;
 		pounceMod = 2.8f;
 	}
 	
@@ -31,27 +30,28 @@ public class PounceEnemy : Enemy {
 			}
 		}
 		if (player != null) {
-			float t = Time.deltaTime;
-			cooldown -= t;
-			pounceTime -= t;
+
+			cooldown -= Time.deltaTime;
 			if (shouldAggro ())
 				aggrod = true;
-			if (playerInvisibility.isVisible && inLoS () && pounceTime <= 0.0f && aggrod) {
+			if (playerInvisibility.isVisible && inLoS () && cooldown < 0.0f && aggrod) {
 				destLocation = player.transform.position;
 				if (pouncing) {
 					speedMod = speedMod / pounceMod;
 					pouncing = false;
-					cooldown = 2.5f;
 				}
 			}
+
+
+
 		
 
 			if (aggrod && Vector3.Distance (transform.position, destLocation) > .12)
 				move (Time.deltaTime);
-			if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= pounceRadius && !pouncing)
+			if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= pounceRadius)
 				pounce ();
-			/*if (Vector3.Distance (transform.position, player.transform.position) <= killRadius)
-				player.GetComponent<Movement> ().explode ();*/
+			if (Vector3.Distance (transform.position, player.transform.position) <= killRadius)
+				player.GetComponent<Movement> ().explode ();
 		}
 	}
 	
@@ -63,14 +63,10 @@ public class PounceEnemy : Enemy {
 	
 	//Pounces at player's current location.
 	public void pounce( ){
-		if (cooldown <= 0) {
+		if (cooldown < 0) {
 			pouncing = true;
 			speedMod *= pounceMod;
-			pounceTime = 2.5f;
+			cooldown = 2.5f;
 		}
-	}
-	public override void push(Vector3 p){
-		base.push (p);
-		pounceTime = 0;
 	}
 }
