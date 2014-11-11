@@ -39,8 +39,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61be3d0bb35113449825503013e854da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputFile: FUCKTHISSHIT
-  next_level: 
+  inputFile: Level 3
+  next_level: Scene2
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
@@ -51,6 +51,10 @@ MonoBehaviour:
   pounce_enemy: {fileID: 100006, guid: b819aff448f1d9945a9561a2685228fd, type: 2}
   vision_tower: {fileID: 100000, guid: 2a964b75fa0e2d54ea9665c0cb01ba6f, type: 2}
   dead_zone: {fileID: 100000, guid: fc8c0c861b6d4de439055cb605943caf, type: 2}
+  blowup_mine: {fileID: 100000, guid: 900eba571480c05499716978345d2748, type: 2}
+  push_mine: {fileID: 100000, guid: 429fc63f5d88820449d74442493ec6bc, type: 2}
+  slow_mine: {fileID: 100000, guid: f940846b049e89d478bc199203de15fe, type: 2}
+  invisijuice: {fileID: 100000, guid: a4c89b6b2572fa046acf28ef79709aba, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

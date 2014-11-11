@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 1
   detonateRadius: 1
-  numMines: 5
+  numMines: 1
   splodeables: {fileID: 0}
   keycode: 51
   reloadTime: 2
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: .699999988
-  numMines: 10
+  numMines: 2
   splodeables: {fileID: 0}
   keycode: 50
   reloadTime: 1
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 3
   detonateRadius: 1
-  numMines: 10
+  numMines: 3
   splodeables: {fileID: 0}
   keycode: 49
   reloadTime: 1
