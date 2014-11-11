@@ -6,16 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_Scenes/Scene3.unity
+    path: Assets/_Scenes/LoadScene.unity
   - enabled: 1
-    path: Assets/_Scenes/Scene4.unity
+    path: Assets/_Scenes/FirstTimeBeatingAnEnemy.unity
   - enabled: 1
-    path: Assets/_Scenes/Scene5.unity
+    path: Assets/_Scenes/DeadZoneTutorial.unity
   - enabled: 1
-    path: Assets/_Scenes/Scene7.unity
+    path: Assets/_Scenes/FastEnemyGetsStuck.unity
   - enabled: 1
-    path: Assets/_Scenes/Scene1.unity
+    path: Assets/_Scenes/KillThemForTheMines.unity
   - enabled: 1
-    path: Assets/_Scenes/Scene2.unity
+    path: Assets/_Scenes/SymmetricFastEnemies.unity
   - enabled: 1
-    path: Assets/_Scenes/Scene6.unity
+    path: Assets/_Scenes/TheLightTower.unity
+  - enabled: 1
+    path: Assets/_Scenes/HardestShitEver.unity

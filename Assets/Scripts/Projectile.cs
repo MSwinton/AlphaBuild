@@ -16,7 +16,10 @@ public class Projectile : MonoBehaviour {
 		speedMod *= 1.01f;
 		//GameObject player = GameObject.FindGameObjectWithTag("Player");
 		if( other.tag == "Player" )	other.GetComponent<Movement>().explode();
-		if( other.tag == "Enemy" && timer<=0 ) other.GetComponent<Enemy>().explode ();
+		if( other.gameObject.tag == "Enemy" && timer<=0 ){
+			other.gameObject.GetComponentInParent<Enemy>().explode ();
+			Destroy(gameObject);
+		}
 		if( other.gameObject.layer == LayerMask.NameToLayer("Wall") || other.tag == "Player" ) Destroy(gameObject);
 	}
 
