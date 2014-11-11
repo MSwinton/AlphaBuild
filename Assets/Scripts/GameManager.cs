@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 	Level level;
 	GameObject splodeables;
 	public string inputFile;
+	public string next_level;
 	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone;
 	void Start(){
 		level = new Level(inputFile);
