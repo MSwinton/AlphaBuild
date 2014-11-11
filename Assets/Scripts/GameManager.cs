@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour {
 	GameObject splodeables;
 	public string inputFile;
 	public string next_level;
-	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone;
+	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone, blowup_mine, push_mine, slow_mine, invisijuice;
 	void Start(){
 		level = new Level(inputFile);
 		splodeables = new GameObject();
@@ -71,20 +71,20 @@ public class GameManager : MonoBehaviour {
 			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Dead Zone";
 		}
-		for(int i=0;i<level.deadZonePositions.Count;i++){
-			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
+		for(int i=0;i<level.blowupMinePositions.Count;i++){
+			o = Instantiate (blowup_mine, level.blowupMinePositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Blowup Mine";
 		}
-		for(int i=0;i<level.deadZonePositions.Count;i++){
-			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
+		for(int i=0;i<level.pushMinePositions.Count;i++){
+			o = Instantiate (push_mine, level.pushMinePositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Push Mine";
 		}
-		for(int i=0;i<level.deadZonePositions.Count;i++){
-			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
+		for(int i=0;i<level.slowMinePositions.Count;i++){
+			o = Instantiate (slow_mine, level.slowMinePositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Slow Mine";
 		}
-		for(int i=0;i<level.deadZonePositions.Count;i++){
-			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
+		for(int i=0;i<level.invisijuicePositions.Count;i++){
+			o = Instantiate (invisijuice, level.invisijuicePositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Invisijuice";
 		}
 	}
