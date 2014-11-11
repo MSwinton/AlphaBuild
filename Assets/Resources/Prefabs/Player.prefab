@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfcf83bbddd71d346b90d492af720290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blastRadius: 2
+  blastRadius: 1
   detonateRadius: 1
   numMines: 5
   splodeables: {fileID: 0}

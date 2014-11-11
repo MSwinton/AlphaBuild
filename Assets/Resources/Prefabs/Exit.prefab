@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f9958266bdbc740923d1a120ee8ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: Scene2
+  nextLevel: Scene3
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

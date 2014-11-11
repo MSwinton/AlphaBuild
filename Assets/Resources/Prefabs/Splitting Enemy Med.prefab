@@ -12,7 +12,7 @@ GameObject:
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: LineOfSight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   playerLayer: 0
   enemyObject: {fileID: 100002}
   maskingLayerName: Wall
+  radius: 15
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,6 +129,7 @@ MonoBehaviour:
   aggroRadius: 5
   killRadius: 1
   slowTime: 5
+  destLocation: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
   inLineOfSight: 0
   aggrod: 0
