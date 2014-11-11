@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
   - 60: {fileID: 6000000}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -164,6 +165,19 @@ MonoBehaviour:
   keycode: 101
   reloadTime: 1
   armTime: .300000012
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe1325116b1f1b4c8c4f73219c51953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visible: {fileID: 21300000, guid: 1c96a6edd5cec9649a9e677be5e46c30, type: 3}
+  invisible: {fileID: 21300000, guid: b28bfe66920ce614cad90d5bbacf4aba, type: 3}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

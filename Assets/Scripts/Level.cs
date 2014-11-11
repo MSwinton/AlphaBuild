@@ -17,6 +17,10 @@ public class Level{
 	public List<Vector3> rangedEnemyPositions;
 	public List<Vector3> towerPositions;
 	public List<Vector3> deadZonePositions;
+	public List<Vector3> pushMinePositions;
+	public List<Vector3> blowupMinePositions;
+	public List<Vector3> slowMinePositions;
+	public List<Vector3> invisijuicePositions;
 	
 	public Level(string fileName){
 		tiles = new List<List<int>>(); // if we need to add new rows we need to initialize a List<int> element and add to tiles
@@ -26,6 +30,10 @@ public class Level{
 		rangedEnemyPositions = new List<Vector3>();
 		towerPositions = new List<Vector3>();
 		deadZonePositions = new List<Vector3>();
+		pushMinePositions = new List<Vector3>();
+		blowupMinePositions = new List<Vector3>();
+		slowMinePositions = new List<Vector3>();
+		invisijuicePositions= new List<Vector3>();
 		
 		
 		/*for(int i=0;i<width;i++){
@@ -167,6 +175,50 @@ public class Level{
 				break;
 			}
 		}
+		for (int i = 0; i < lines.Count; i++){
+			if (string.Compare(lines[i], "PUSH MINE") == 0){
+				string RELine = lines[i+1];
+				string[] RELineSplit = RELine.Split (' ');
+				for (int j = 0; j < RELineSplit.Length; j++) {
+					string[] RE = RELineSplit[j].Split(',');
+					pushMinePositions.Add (new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0));
+				}
+				break;
+			}
+		}
+		for (int i = 0; i < lines.Count; i++){
+			if (string.Compare(lines[i], "BLOWUP MINE") == 0){
+				string RELine = lines[i+1];
+				string[] RELineSplit = RELine.Split (' ');
+				for (int j = 0; j < RELineSplit.Length; j++) {
+					string[] RE = RELineSplit[j].Split(',');
+					blowupMinePositions.Add (new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0));
+				}
+				break;
+			}
+		}
+		for (int i = 0; i < lines.Count; i++){
+			if (string.Compare(lines[i], "SLOW MINE") == 0){
+				string RELine = lines[i+1];
+				string[] RELineSplit = RELine.Split (' ');
+				for (int j = 0; j < RELineSplit.Length; j++) {
+					string[] RE = RELineSplit[j].Split(',');
+					slowMinePositions.Add (new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0));
+				}
+				break;
+			}
+		}
+		for (int i = 0; i < lines.Count; i++){
+			if (string.Compare(lines[i], "INVISIJUICE") == 0){
+				string RELine = lines[i+1];
+				string[] RELineSplit = RELine.Split (' ');
+				for (int j = 0; j < RELineSplit.Length; j++) {
+					string[] RE = RELineSplit[j].Split(',');
+					invisijuicePositions.Add (new Vector3(float.Parse(RE[0]), float.Parse(RE[1]), 0));
+				}
+				break;
+			}
+		}
 		
 	}
 	
@@ -271,6 +323,51 @@ public class Level{
 				}
 			}
 			sw.WriteLine(deadZoneLine);
+		}
+		
+		if (pushMinePositions.Count > 0){
+			sw.WriteLine("PUSH MINE");
+			string pushMineLine = "";
+			for (int i = 0; i < pushMinePositions.Count; i++){
+				pushMineLine += pushMinePositions[i][0].ToString() + "," + pushMinePositions[i][1].ToString();
+				if (i < deadZonePositions.Count - 1){
+					pushMineLine += " ";
+				}
+			}
+			sw.WriteLine(pushMineLine);
+		}
+		if (blowupMinePositions.Count > 0){
+			sw.WriteLine("BLOWUP MINE");
+			string blowupMineLine = "";
+			for (int i = 0; i < blowupMinePositions.Count; i++){
+				blowupMineLine += blowupMinePositions[i][0].ToString() + "," + blowupMinePositions[i][1].ToString();
+				if (i < deadZonePositions.Count - 1){
+					blowupMineLine += " ";
+				}
+			}
+			sw.WriteLine(blowupMineLine);
+		}
+		if (slowMinePositions.Count > 0){
+			sw.WriteLine("SLOW MINE");
+			string slowMineLine = "";
+			for (int i = 0; i < slowMinePositions.Count; i++){
+				slowMineLine += slowMinePositions[i][0].ToString() + "," + slowMinePositions[i][1].ToString();
+				if (i < deadZonePositions.Count - 1){
+					slowMineLine += " ";
+				}
+			}
+			sw.WriteLine(slowMineLine);
+		}
+		if (invisijuicePositions.Count > 0){
+			sw.WriteLine("INVISIJUICE");
+			string invisijuiceLine = "";
+			for (int i = 0; i < invisijuicePositions.Count; i++){
+				invisijuiceLine += invisijuicePositions[i][0].ToString() + "," + invisijuicePositions[i][1].ToString();
+				if (i < deadZonePositions.Count - 1){
+					invisijuiceLine += " ";
+				}
+			}
+			sw.WriteLine(invisijuiceLine);
 		}
 		
 		
