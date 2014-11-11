@@ -70,5 +70,21 @@ public class GameManager : MonoBehaviour {
 			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Dead Zone";
 		}
+		for(int i=0;i<level.deadZonePositions.Count;i++){
+			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
+			o.transform.name = "Blowup Mine";
+		}
+		for(int i=0;i<level.deadZonePositions.Count;i++){
+			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
+			o.transform.name = "Push Mine";
+		}
+		for(int i=0;i<level.deadZonePositions.Count;i++){
+			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
+			o.transform.name = "Slow Mine";
+		}
+		for(int i=0;i<level.deadZonePositions.Count;i++){
+			o = Instantiate (dead_zone, level.deadZonePositions[i], Quaternion.identity)as GameObject;
+			o.transform.name = "Invisijuice";
+		}
 	}
 }
