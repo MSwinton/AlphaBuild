@@ -112,7 +112,7 @@ MonoBehaviour:
   detonateRadius: 1
   numMines: 5
   splodeables: {fileID: 0}
-  keycode: 9
+  keycode: 51
   reloadTime: 2
   armTime: 1
 --- !u!114 &11400004
@@ -130,7 +130,7 @@ MonoBehaviour:
   detonateRadius: .699999988
   numMines: 10
   splodeables: {fileID: 0}
-  keycode: 113
+  keycode: 50
   reloadTime: 1
   armTime: .300000012
 --- !u!114 &11400006
@@ -162,7 +162,7 @@ MonoBehaviour:
   detonateRadius: 1
   numMines: 10
   splodeables: {fileID: 0}
-  keycode: 101
+  keycode: 49
   reloadTime: 1
   armTime: .300000012
 --- !u!114 &11400010

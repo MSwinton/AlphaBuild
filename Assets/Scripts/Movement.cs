@@ -72,14 +72,14 @@ public class Movement : Splodeable {
 	{
 		speed = baseSpeed;
 	}
-	IEnumerator loseIn2() {
-		yield return new WaitForSeconds(2);
-		Application.LoadLevel (Application.loadedLevelName);
-	}
+
 	public void lose(){//what happens when you lose
 		if(!lost){
 			Instantiate(dieAudio);
-			StartCoroutine(loseIn2());
+
+			GameObject explosion = Resources.Load<GameObject>("Prefabs/fire");
+			Instantiate(explosion,transform.position,Quaternion.identity);
+
 			lost = true;
 		}
 	}

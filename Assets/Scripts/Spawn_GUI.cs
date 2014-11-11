@@ -45,19 +45,19 @@ public class Spawn_GUI : MonoBehaviour {
 		style.active.textColor = Color.red;
 
 		if (GUI.Button (new Rect (width_Offset + button_Offset , height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
-		                "E Push (" + player.GetComponent<PlacePushMine>().numMines + ")", style)){
+		                "1 Push (" + player.GetComponent<PlacePushMine>().numMines + ")", style)){
 		                //"1 Push (" + player.GetComponent<PlacePushMine>().numMines + ")", style)) {
 			index = 1;
 		}
 		button_Offset += Screen.width * button_Size; //next button moved over by the width of buttons
 		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
-		                "Q Slow (" + player.GetComponent<PlaceSlowMine>().numMines + ")", style)){
+		                "2 Slow (" + player.GetComponent<PlaceSlowMine>().numMines + ")", style)){
 		                //"2 Slow (" + player.GetComponent<PlaceSlowMine>().numMines + ")", style)) {
 			index = 2;
 		}
 		button_Offset += Screen.width * button_Size;
 		if (GUI.Button (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.08f),
-		                "Tab Blowup (" + player.GetComponent<PlaceBlowupMine>().numMines + ")", style)){
+		                "3 Blowup (" + player.GetComponent<PlaceBlowupMine>().numMines + ")", style)){
 		                //"3 Blowup (" + player.GetComponent<PlaceBlowupMine>().numMines + ")", style)) {
 			index = 3;
 		}
