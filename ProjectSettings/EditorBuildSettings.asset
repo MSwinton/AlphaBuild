@@ -21,3 +21,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/TheLightTower.unity
   - enabled: 1
     path: Assets/_Scenes/HardestShitEver.unity
+  - enabled: 1
+    path: Assets/_Scenes/Win.unity
