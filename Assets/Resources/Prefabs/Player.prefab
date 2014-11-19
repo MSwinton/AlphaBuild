@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 1
   detonateRadius: 1
-  numMines: 1
+  numMines: 0
   splodeables: {fileID: 0}
   keycode: 51
   reloadTime: 2
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 2
   detonateRadius: .699999988
-  numMines: 2
+  numMines: 0
   splodeables: {fileID: 0}
   keycode: 50
   reloadTime: 1
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isVisible: 1
-  invisijuice: 5
+  invisijuice: 0
   keycode: 32
 --- !u!114 &11400008
 MonoBehaviour:
@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blastRadius: 3
   detonateRadius: 1
-  numMines: 3
+  numMines: 0
   splodeables: {fileID: 0}
   keycode: 49
   reloadTime: 1
