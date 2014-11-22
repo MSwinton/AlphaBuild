@@ -5,29 +5,29 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/LoadScene.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/FirstTimeBeatingAnEnemy.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/DeadZoneTutorial.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/FastEnemyGetsStuck.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/KillThemForTheMines.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/SymmetricFastEnemies.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/TheLightTower.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/HardestShitEver.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Tutorial/StartTutorial.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Tutorial/CharacterTutorial.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Tutorial/Game1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Tutorial/Game2.unity
   - enabled: 1
     path: Assets/_Scenes/Win.unity
