@@ -14,7 +14,6 @@ public class NormalRangedEnemy : Enemy {
 		shootRadius = 4.0f;
 		killRadius = 0.8f;
 		aggrod = false;
-		destLocation = this.transform.position;
 		cooldown = 0.0f;
 	}
 	
@@ -32,13 +31,13 @@ public class NormalRangedEnemy : Enemy {
 				aggrod = true;
 			if (playerInvisibility.isVisible && inLoS () && aggrod)
 				destLocation = player.transform.position;
-			if (aggrod)
-				move (Time.deltaTime);
+			move (Time.deltaTime);
 			if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= shootRadius)
 				shoot ();
 			/*if (Vector3.Distance (transform.position, player.transform.position) <= killRadius)
 				player.GetComponent<Movement> ().explode ();*/
 		}
+		setDest();
 	}
 	
 	public override void explode(){

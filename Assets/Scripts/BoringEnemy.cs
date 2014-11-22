@@ -9,7 +9,6 @@ public class BoringEnemy : Enemy {
 		speedMod *= 1.0f;
 		killRadius *= 1.25f;
 		aggrod = false;
-		destLocation = this.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -25,11 +24,11 @@ public class BoringEnemy : Enemy {
 				aggrod = true;
 			if (playerInvisibility.isVisible && inLoS () && aggrod)
 				destLocation = player.transform.position;
-			if (aggrod)
-				move (Time.deltaTime);
+			move (Time.deltaTime);
 			/*if (player && Vector3.Distance (transform.position, player.transform.position) <= killRadius) 
 				player.GetComponent<Movement> ().explode ();*/
 		} 
+		setDest();
 	}
 
 	public override void explode(){

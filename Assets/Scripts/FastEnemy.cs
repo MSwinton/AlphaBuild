@@ -10,7 +10,6 @@ public class FastEnemy : Enemy {
 		aggroRadius *= 3.5f;
 		killRadius *= 0.85f;
 		aggrod = false;
-		destLocation = this.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -26,12 +25,12 @@ public class FastEnemy : Enemy {
 								aggrod = true;
 						if (playerInvisibility.isVisible && inLoS () && aggrod)
 								destLocation = player.transform.position;
-						if (aggrod)
-								move (Time.deltaTime);
+						move (Time.deltaTime);
 						/*if (player && Vector3.Distance (transform.position, player.transform.position) <= killRadius) 
 								player.GetComponent<Movement> ().explode ();*/
 				}
-		}
+		setDest();
+	}
 	
 	public override void explode(){
 		base.explode();

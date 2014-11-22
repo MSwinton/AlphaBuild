@@ -46,21 +46,25 @@ public class GameManager : MonoBehaviour {
 			o = Instantiate (slow_enemy, level.slowEnemyPositions[i], Quaternion.identity) as GameObject;
 			o.transform.name = "Slow Enemy";
 			o.transform.parent = splodeables.transform;
+			o.GetComponent<Enemy>().pathPoints = level.slowEnemyPatrol[i];
 		}
 		for(int i=0;i<level.fastEnemyPositions.Count;i++){
 			o = Instantiate (fast_enemy, level.fastEnemyPositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Fast Enemy";
 			o.transform.parent = splodeables.transform;
+			o.GetComponent<Enemy>().pathPoints = level.fastEnemyPatrol[i];
 		}
 		for(int i=0;i<level.pounceEnemyPositions.Count;i++){
 			o = Instantiate (pounce_enemy, level.pounceEnemyPositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Pounce Enemy";
 			o.transform.parent = splodeables.transform;
+			o.GetComponent<Enemy>().pathPoints = level.pounceEnemyPatrol[i];
 		}
 		for(int i=0;i<level.rangedEnemyPositions.Count;i++){
 			o = Instantiate (ranged_enemy, level.rangedEnemyPositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Ranged Enemy";
 			o.transform.parent = splodeables.transform;
+			o.GetComponent<Enemy>().pathPoints = level.rangedEnemyPatrol[i];
 		}
 		for(int i=0;i<level.towerPositions.Count;i++){
 			o = Instantiate (vision_tower, level.towerPositions[i], Quaternion.identity)as GameObject;

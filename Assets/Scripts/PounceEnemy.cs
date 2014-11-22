@@ -16,7 +16,6 @@ public class PounceEnemy : Enemy {
 		pounceRadius = 2.0f;
 		killRadius = 0.9f;
 		aggrod = false;
-		destLocation = this.transform.position;
 		cooldown = 0.0f;
 		pounceMod = 2.8f;
 	}
@@ -41,18 +40,13 @@ public class PounceEnemy : Enemy {
 					pouncing = false;
 				}
 			}
-
-
-
-		
-
-			if (aggrod && Vector3.Distance (transform.position, destLocation) > .12)
-				move (Time.deltaTime);
+			move (Time.deltaTime);
 			if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= pounceRadius)
 				pounce ();
 			if (Vector3.Distance (transform.position, player.transform.position) <= killRadius)
 				player.GetComponent<Movement> ().explode ();
 		}
+		setDest();
 	}
 	
 	public override void explode(){
