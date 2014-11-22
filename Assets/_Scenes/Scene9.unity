@@ -113,6 +113,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 2ac69a392bb810d49a8b9ca25cf09efe, type: 2}
+      propertyPath: frameSize
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ac69a392bb810d49a8b9ca25cf09efe, type: 2}
   m_RootGameObject: {fileID: 56175880}
@@ -225,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecdf64d569955754ba02055d401db9a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frameSize: 5
+  frameSize: 8
 --- !u!81 &56175883
 AudioListener:
   m_ObjectHideFlags: 0
