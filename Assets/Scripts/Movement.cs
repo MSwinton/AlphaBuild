@@ -10,6 +10,8 @@ public class Movement : Splodeable {
 	protected bool pushed;
 	public float acceleration = 15;
 	public GameObject dieAudio;
+	protected float immunetime;
+	public bool shielded;
 	bool lost;
 	void Start(){
 		speed = baseSpeed;
@@ -20,6 +22,7 @@ public class Movement : Splodeable {
 			return;
 		}
 		float t = Time.deltaTime;
+		immunetime -= t;
 		if(slowTime > 0){
 			slowTime -= t;
 		}
@@ -51,11 +54,30 @@ public class Movement : Splodeable {
 		transform.rotation = Quaternion.Euler(0,0,0);
 	}
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Enemy" || coll.gameObject.tag == "Dead Zone")
-			this.lose ();
+		if (coll.gameObject.tag == "Dead Zone") this.lose();
+		else if (coll.gameObject.tag == "Enemy") this.explode();
 	}
 	public override void explode(){//what happens when you explode.
-		lose();
+		if( immunetime < 0 ){
+			if( shielded ){
+				shielded = false;
+				immunetime = 3;
+				//Push Part
+				GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+				foreach( GameObject enemy in enemies ){
+					if( Vector3.Distance(enemy.transform.position, transform.position) < 5 ){
+						Vector3 r = enemy.transform.position - this.transform.position;
+						enemy.GetComponentInParent<Enemy>().push(r.normalized * 11 / r.magnitude);
+					}
+				}
+				GameObject audioObject;
+				audioObject = Resources.Load<GameObject>("Prefabs/Boing");
+				Instantiate(audioObject);
+			}
+			else{
+				lose();
+			}
+		}
 	}
 	public override void slow(){//what happens when you get slowed down
 		speed *= .5f;

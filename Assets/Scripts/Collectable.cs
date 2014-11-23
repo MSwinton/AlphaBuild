@@ -32,6 +32,9 @@ public class Collectable : MonoBehaviour {
 			if( thingName.ToLower() == "invisijuice" ){
 				other.GetComponent<Invisibility>().invisijuice += amount;
 			}
+			if( thingName.ToLower() == "shield" ){
+				other.GetComponent<Movement>().shielded = true;
+			}
 			Destroy(gameObject);
 		}
 	}
