@@ -4,6 +4,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 	Level level;
 	GameObject splodeables;
+	Camera minimap;
 	public string inputFile;
 	public string next_level;
 	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone, blowup_mine, push_mine, slow_mine, invisijuice;
@@ -13,6 +14,9 @@ public class GameManager : MonoBehaviour {
 		splodeables.tag = "Splodeables";
 		splodeables.transform.parent = this.transform;
 		playLevel();
+		minimap = GameObject.FindGameObjectWithTag("Minimap").GetComponent<Camera>();
+		minimap.transform.position = new Vector3(level.tiles.Count/2,level.tiles.Count/2,-30);
+		minimap.orthographicSize = level.tiles.Count/2;
 	}
 	void playLevel(){
 		GameObject tile;

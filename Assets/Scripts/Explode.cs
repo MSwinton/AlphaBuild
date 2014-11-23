@@ -26,5 +26,5 @@ public class Explode : MonoBehaviour {
 		if (other.tag != "Barrier" && other.tag!="LineOfSight"){
 			Destroy(other.gameObject);
 		}
-}
+	}
 }
