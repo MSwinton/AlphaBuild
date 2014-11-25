@@ -22,6 +22,9 @@ public class PounceEnemy : Enemy {
 	
 	// Update is called once per frame
 	void Update () {
+		if (transform.childCount < 3) {
+			Destroy (gameObject);
+		}
 		if (player == null) {
 			player = GameObject.FindGameObjectWithTag ("Player");
 			if(player != null){

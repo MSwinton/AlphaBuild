@@ -178,7 +178,7 @@ MonoBehaviour:
   splodeables: {fileID: 0}
   keycode: 51
   reloadTime: 2
-  armTime: 1
+  armTime: .5
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -195,8 +195,8 @@ MonoBehaviour:
   numMines: 0
   splodeables: {fileID: 0}
   keycode: 50
-  reloadTime: 1
-  armTime: .300000012
+  reloadTime: 0
+  armTime: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,8 +227,8 @@ MonoBehaviour:
   numMines: 0
   splodeables: {fileID: 0}
   keycode: 49
-  reloadTime: 1
-  armTime: .300000012
+  reloadTime: 0
+  armTime: 0
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -254,7 +254,7 @@ SpriteRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 994577f0d949964408d6e71076e74b3b, type: 2}
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

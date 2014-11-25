@@ -252,7 +252,7 @@ Transform:
   - {fileID: 1543277183}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!1001 &388105290
+--- !u!1001 &205667573
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -289,15 +289,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
       propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
-      propertyPath: inputFile
-      value: Scene9
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
-      propertyPath: next_level
-      value: Win
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5600f36b899520439742368b8d298c4, type: 2}
@@ -309,7 +301,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1861687982}
     m_Modifications:
     - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
       propertyPath: m_LocalPosition.x
@@ -341,7 +333,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
@@ -460,7 +452,7 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: d5600f36b899520439742368b8d298c4, type: 2}
-  m_PrefabInternal: {fileID: 388105290}
+  m_PrefabInternal: {fileID: 205667573}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1861687982}
@@ -477,14 +469,14 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4,
     type: 2}
-  m_PrefabInternal: {fileID: 388105290}
+  m_PrefabInternal: {fileID: 205667573}
   m_GameObject: {fileID: 1861687980}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 61be3d0bb35113449825503013e854da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputFile: Scene9
+  inputFile: Scene11
   next_level: Win
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
@@ -500,18 +492,21 @@ MonoBehaviour:
   push_mine: {fileID: 100000, guid: 429fc63f5d88820449d74442493ec6bc, type: 2}
   slow_mine: {fileID: 100000, guid: f940846b049e89d478bc199203de15fe, type: 2}
   invisijuice: {fileID: 100000, guid: a4c89b6b2572fa046acf28ef79709aba, type: 2}
+  dynaSwitch: {fileID: 100000, guid: e9a97ed3f6bdc0648a6d1c18a3af53b1, type: 2}
+  dynaPile: {fileID: 100000, guid: f1ddf8aaf080786448d80e8ff9aa5d97, type: 2}
 --- !u!4 &1861687982
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
-  m_PrefabInternal: {fileID: 388105290}
+  m_PrefabInternal: {fileID: 205667573}
   m_GameObject: {fileID: 1861687980}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1926881162}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!1 &1926881157
 GameObject:
   m_ObjectHideFlags: 0
@@ -589,5 +584,5 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_Father: {fileID: 1861687982}
+  m_RootOrder: 0

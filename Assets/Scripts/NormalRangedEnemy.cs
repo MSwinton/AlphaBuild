@@ -19,6 +19,10 @@ public class NormalRangedEnemy : Enemy {
 	
 	// Update is called once per frame
 	void Update () {
+		if (transform.childCount < 2) {
+			Destroy (gameObject);
+		}
+
 		cooldown -= Time.deltaTime;
 		if (player == null) {
 			player = GameObject.FindGameObjectWithTag ("Player");
