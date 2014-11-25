@@ -114,7 +114,7 @@ MonoBehaviour:
   splodeables: {fileID: 0}
   keycode: 51
   reloadTime: 2
-  armTime: 1
+  armTime: .5
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,8 +131,8 @@ MonoBehaviour:
   numMines: 0
   splodeables: {fileID: 0}
   keycode: 50
-  reloadTime: 1
-  armTime: .300000012
+  reloadTime: 0
+  armTime: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -163,8 +163,8 @@ MonoBehaviour:
   numMines: 0
   splodeables: {fileID: 0}
   keycode: 49
-  reloadTime: 1
-  armTime: .300000012
+  reloadTime: 0
+  armTime: 0
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
