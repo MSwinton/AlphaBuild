@@ -139,12 +139,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5cb3592640ee49498222afd46554065, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 2
+  baseSpeed: 1
   aggroRadius: 5
   killRadius: 1
   slowTime: 5
   destLocation: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  pathPoints: []
   inLineOfSight: 0
   aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
@@ -176,7 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 448d7a643afaa1340b155a121f9abe69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 90
+  aggroSpeed: 90
+  nonAggroSpeed: 45
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

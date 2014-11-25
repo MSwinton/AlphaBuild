@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 
 public abstract class Enemy : Splodeable {
@@ -8,9 +9,11 @@ public abstract class Enemy : Splodeable {
 	protected float pushSpeed = 20;// speed that it can be pushed by a push mine
 	public float aggroRadius = 1;
 	public float killRadius = 1;
-	public float slowTime = 5;
+	public float slowTime = 10;
 	public Vector3 destLocation; //to find the player and kill it!!!
 	public GameObject player;
+	public List<Vector3> pathPoints;
+	int curPoint;
 	public bool inLineOfSight = false;
 	protected Invisibility playerInvisibility;
 	public bool aggrod;
@@ -22,11 +25,18 @@ public abstract class Enemy : Splodeable {
 
 	//public abstract void Update();
 	public void init(){
-
-
-
-
-
+		if(pathPoints!=null){
+			if(pathPoints.Count > 0){
+				curPoint = 0;
+				destLocation = pathPoints[curPoint];
+			}
+			else{
+				destLocation = this.transform.position;
+			}
+		}
+		else{
+			destLocation = this.transform.position;
+		}
 	}
 
 
@@ -74,7 +84,14 @@ public abstract class Enemy : Splodeable {
 		pushed = true;
 		pushedVelocity = velocity;
 	}
-
+	public void setDest(){
+		if(!aggrod && pathPoints.Count > 0){
+			if((transform.position - pathPoints[curPoint]).magnitude < .5){
+				curPoint = (curPoint + 1)%pathPoints.Count;
+				destLocation = pathPoints[curPoint];
+			}
+		}
+	}
 	//used for the flash mine
 	public override void blind(float t){
 		
@@ -86,7 +103,7 @@ public abstract class Enemy : Splodeable {
 	}
 	public override void slow ()
 	{
-		speedMod *= .3f;
+		speedMod *= 0.2f;
 		slowTimer = slowTime;
 	}
 	//Determines whether the enemy should aggro.
