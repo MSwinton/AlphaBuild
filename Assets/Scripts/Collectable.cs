@@ -15,13 +15,8 @@ using System.Collections;
 public class Collectable : MonoBehaviour {
 	public string thingName;
 	public int amount = 3;
-	GameObject audioObject;
-	void Start(){
-		audioObject = Resources.Load<GameObject>("Prefabs/Bling");
-	}
 	void OnTriggerEnter2D( Collider2D other ){
 		if( other.tag == "Player" ){ 
-			Instantiate(audioObject);
 			if( thingName.ToLower() == "flash" ){
 				other.GetComponent<PlaceFlashMine>().numMines += amount;
 			}
@@ -36,6 +31,9 @@ public class Collectable : MonoBehaviour {
 			}
 			if( thingName.ToLower() == "invisijuice" ){
 				other.GetComponent<Invisibility>().invisijuice += amount;
+			}
+			if( thingName.ToLower() == "shield" ){
+				other.GetComponent<Movement>().shielded = true;
 			}
 			Destroy(gameObject);
 		}

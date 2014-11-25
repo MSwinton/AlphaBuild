@@ -32,8 +32,11 @@ public class NormalRangedEnemy : Enemy {
 			if (playerInvisibility.isVisible && inLoS () && aggrod)
 				destLocation = player.transform.position;
 			move (Time.deltaTime);
-			if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= shootRadius)
-				shoot ();
+			if(aggrod){
+				if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= shootRadius)
+					shoot ();
+			}
+			
 			/*if (Vector3.Distance (transform.position, player.transform.position) <= killRadius)
 				player.GetComponent<Movement> ().explode ();*/
 		}

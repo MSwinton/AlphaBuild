@@ -18,7 +18,8 @@ public class GameManager : MonoBehaviour {
 		minimap = GameObject.FindGameObjectWithTag("Minimap").GetComponent<Camera>();
 		minimap.transform.position = new Vector3(level.tiles.Count/2,level.tiles.Count/2,-30);
 		minimap.orthographicSize = level.tiles.Count/2;
-		activeMinimap = true;
+		activeMinimap = false;
+		minimap.gameObject.SetActive(false);
 	}
 	void playLevel(){
 		GameObject tile;

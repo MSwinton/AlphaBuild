@@ -213,6 +213,7 @@ MonoBehaviour:
   slowTime: 5
   destLocation: {x: 0, y: 0, z: 0}
   player: {fileID: 0}
+  pathPoints: []
   inLineOfSight: 0
   aggrod: 0
   velocity: {x: 0, y: 0, z: 0}

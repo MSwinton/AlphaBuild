@@ -13,7 +13,7 @@ GameObject:
   - 60: {fileID: 6000000}
   - 114: {fileID: 11400002}
   m_Layer: 0
-  m_Name: Collectable_Blowup
+  m_Name: Collectable_Helmet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,8 +61,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2dc82dce4b125a459d8335b24f718fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thingName: blowup
-  amount: 1
+  thingName: shield
+  amount: 3
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,7 +95,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2731d39784452bd43ae197e1a3e3640e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8e489cebf021c83478a90f6380b499e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:
