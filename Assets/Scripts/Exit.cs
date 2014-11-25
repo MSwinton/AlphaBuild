@@ -10,6 +10,7 @@ public class Exit : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player"){
+			this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/open exit door");
 			Application.LoadLevel (script.next_level);
 		}
 	}
