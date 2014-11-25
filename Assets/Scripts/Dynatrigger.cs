@@ -1,21 +1,22 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Dynatrigger : MonoBehaviour {
 
-	public Vector3[] positions;
+	public List<Vector3> positions;
 	public float radius;
 	public GameObject player;
-	
+	public bool activated;
 	void Start( ){
-		positions = new Vector3[1];
-		positions[0] = this.transform.position;
 		radius = 2.5f;
+		activated = false;
 	}
 	
 	void OnTriggerEnter2D( Collider2D other ){
-		if( (other.tag == "Player") || (other.tag == "Enemy") ){
+		if( (other.tag == "Player") || (other.tag == "Enemy") && !activated){
 			bool playerOwned = false;
+			activated = true;
 			//First level
 			Transform psplodes = GameObject.FindGameObjectWithTag("Splodeables").transform;
 			foreach( Transform child in psplodes ){

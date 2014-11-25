@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 	Camera minimap;
 	public string inputFile;
 	public string next_level;
-	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone, blowup_mine, push_mine, slow_mine, invisijuice;
+	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone, blowup_mine, push_mine, slow_mine, invisijuice, dynaSwitch, dynaPile;
 	bool activeMinimap;
 	void Start(){
 		level = new Level(inputFile);
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour {
 		splodeables.transform.parent = this.transform;
 		playLevel();
 		minimap = GameObject.FindGameObjectWithTag("Minimap").GetComponent<Camera>();
-		minimap.transform.position = new Vector3(level.tiles.Count/2,level.tiles.Count/2,-30);
+		minimap.transform.position = new Vector3(level.tiles.Count/2,level.tiles[0].Count/2,-30);
 		minimap.orthographicSize = level.tiles.Count/2;
 		activeMinimap = false;
 		minimap.gameObject.SetActive(false);
@@ -97,6 +97,16 @@ public class GameManager : MonoBehaviour {
 		for(int i=0;i<level.invisijuicePositions.Count;i++){
 			o = Instantiate (invisijuice, level.invisijuicePositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Invisijuice";
+		}
+		for(int i=0;i<level.dynaSwitchPositions.Count;i++){
+			o = Instantiate (dynaSwitch, level.dynaSwitchPositions[i], Quaternion.identity)as GameObject;
+			o.transform.name = "DynaSwitch";
+			o.GetComponent<Dynatrigger>().positions = level.dynaSwitchPoints[i];
+			for(int j=0;j<level.dynaSwitchPoints[i].Count;j++){
+				GameObject p = Instantiate (dynaPile, level.dynaSwitchPoints[i][j], Quaternion.identity)as GameObject;
+				p.transform.name = "DynaPile";
+				p.transform.parent = splodeables.transform;
+			}
 		}
 	}
 	void Update(){
