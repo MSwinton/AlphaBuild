@@ -14,6 +14,9 @@ public class FastEnemy : Enemy {
 	
 	// Update is called once per frame
 	void Update () {
+		if (transform.childCount < 2) {
+			Destroy (gameObject);
+		}
 		if (player == null) {
 			player = GameObject.FindGameObjectWithTag ("Player");
 			if(player != null){

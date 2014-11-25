@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : Enemy {
 	public Vector3 direction;
-	public float baseSpeed;
-	public float speedMod;
+
 	public float timer;
 	public void Start(){
+		transform.parent = GameObject.FindGameObjectWithTag ("Splodeables").transform;
 		baseSpeed = 3f;
 		speedMod = 1.0f;
 		timer = .2f;
@@ -22,7 +22,10 @@ public class Projectile : MonoBehaviour {
 		}
 		if( other.gameObject.layer == LayerMask.NameToLayer("Wall") || other.tag == "Player" ) Destroy(gameObject);
 	}
-
+	public override void  push(Vector3 something){
+		direction = something.normalized * direction.magnitude ;
+		print (direction);
+	}
 	void Update( ){
 		float t = Time.deltaTime;
 		if(timer > 0){

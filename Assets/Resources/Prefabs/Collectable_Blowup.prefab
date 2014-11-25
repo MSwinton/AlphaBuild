@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingName: blowup
-  amount: 3
+  amount: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
