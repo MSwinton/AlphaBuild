@@ -18,7 +18,7 @@ public class PlaceMine<T> : MonoBehaviour where T : Mine {
 		//numMines = 5;
 	}
 	protected void Update () {
-		if(Input.GetKey(keycode) && numMines > 0 && timer <= 0){
+		if(Input.GetKeyDown(keycode) && numMines > 0 && timer <= 0){
 			placeMine(this.transform.position);
 			numMines--;
 			timer = reloadTime;
