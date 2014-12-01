@@ -22,7 +22,6 @@ public abstract class Enemy : Splodeable {
 	private bool pushed;
 	private Vector3 pushedVelocity;
 	private float slowTimer;
-	public bool disturbed = false;
 
 	//public abstract void Update();
 	public void init(){

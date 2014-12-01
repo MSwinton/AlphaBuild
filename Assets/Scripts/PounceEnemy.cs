@@ -29,8 +29,8 @@ public class PounceEnemy : Enemy {
 
 		cooldown -= Time.deltaTime;
 		if ( shouldAggro() ){
-//			if( !disturbed )		//TODO:  Make this double the aggro radius.
-			disturbed = true;
+			if( !aggrod ) aggroRadius *= 2;
+			aggrod = true;
 			if( cooldown < 0.0f ){
 				destLocation = player.transform.position;
 				//If it was pouncing, stop.
