@@ -18,14 +18,13 @@ public class BoringEnemy : Enemy {
 				}
 
 
-		if (shouldAggro ())
+		if (shouldAggro ()){
+			if( !aggrod ) aggroRadius *= 2;
 			aggrod = true;
-		if (playerInvisibility.isVisible && inLoS () && aggrod)
 			destLocation = player.transform.position;
+		}
+		
 		move (Time.deltaTime);
-		/*if (player && Vector3.Distance (transform.position, player.transform.position) <= killRadius) 
-			player.GetComponent<Movement> ().explode ();*/
-
 		setDest();
 	}
 

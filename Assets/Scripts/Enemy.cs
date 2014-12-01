@@ -111,6 +111,7 @@ public abstract class Enemy : Splodeable {
 	}
 	//Determines whether the enemy should aggro.
 	public bool shouldAggro( ){
+		if( !player ) return false;
 		//In Line of sight of player, player is visible, and in range of player
 		return ( inLoS() && playerInvisibility.isVisible && ((player.transform.position - this.transform.position).magnitude < aggroRadius) );
 

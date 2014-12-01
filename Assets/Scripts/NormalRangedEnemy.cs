@@ -25,15 +25,14 @@ public class NormalRangedEnemy : Enemy {
 
 		cooldown -= Time.deltaTime;
 
-		if (shouldAggro ())
+		if ( shouldAggro() ){
+			if( !aggrod ) aggroRadius *= 2;
 			aggrod = true;
-		if (playerInvisibility.isVisible && inLoS () && aggrod)
 			destLocation = player.transform.position;
-		move (Time.deltaTime);
-		if(aggrod){
-			if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= shootRadius)
+			if( Vector3.Distance(transform.position, player.transform.position) <= shootRadius )
 				shoot ();
 		}
+		move (Time.deltaTime);
 		setDest();
 	}
 	

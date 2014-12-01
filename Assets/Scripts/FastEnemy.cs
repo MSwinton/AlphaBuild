@@ -12,17 +12,19 @@ public class FastEnemy : Enemy {
 		aggrod = false;
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (transform.childCount < 2) {
 			Destroy (gameObject);
 		}
-		if (shouldAggro ())
+		
+		
+		if (shouldAggro ()){
+			if( !aggrod ) aggroRadius *= 2;
 			aggrod = true;
-		if (playerInvisibility.isVisible && inLoS () && aggrod)
 			destLocation = player.transform.position;
+		}
+		
 		move (Time.deltaTime);
-
 		setDest();
 	}
 	

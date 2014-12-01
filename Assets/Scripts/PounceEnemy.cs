@@ -45,12 +45,6 @@ public class PounceEnemy : Enemy {
 			}
 		}
 		move (Time.deltaTime);
-/*/		Physics2D.Linecast(transform.position, player.transform.position, 1 << LayerMask.NameToLayer("Wall"))
-		if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= pounceRadius)
-			pounce ();
-		if (Vector3.Distance (transform.position, player.transform.position) <= killRadius)
-			player.GetComponent<Movement> ().explode ();
-*/
 		setDest();
 	}
 	
