@@ -17,21 +17,12 @@ public class FastEnemy : Enemy {
 		if (transform.childCount < 2) {
 			Destroy (gameObject);
 		}
-		if (player == null) {
-			player = GameObject.FindGameObjectWithTag ("Player");
-			if(player != null){
-				playerInvisibility = player.GetComponent<Invisibility>();
-			}
-		}
-		if (player != null) {
-						if (shouldAggro ())
-								aggrod = true;
-						if (playerInvisibility.isVisible && inLoS () && aggrod)
-								destLocation = player.transform.position;
-						move (Time.deltaTime);
-						/*if (player && Vector3.Distance (transform.position, player.transform.position) <= killRadius) 
-								player.GetComponent<Movement> ().explode ();*/
-				}
+		if (shouldAggro ())
+			aggrod = true;
+		if (playerInvisibility.isVisible && inLoS () && aggrod)
+			destLocation = player.transform.position;
+		move (Time.deltaTime);
+
 		setDest();
 	}
 	

@@ -46,13 +46,14 @@ GameObject:
   - 4: {fileID: 400002}
   - 58: {fileID: 5800000}
   - 114: {fileID: 11400000}
+  - 50: {fileID: 5000002}
   m_Layer: 0
   m_Name: LineOfSight
   m_TagString: LineOfSight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100006
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,6 +137,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!50 &5000002
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!58 &5800000
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -208,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseSpeed: 1
-  aggroRadius: 20
+  aggroRadius: 5
   killRadius: 1
   slowTime: 5
   destLocation: {x: 0, y: 0, z: 0}
@@ -218,6 +234,7 @@ MonoBehaviour:
   aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
   maxAcceleration: 15
+  disturbed: 0
   cooldown: 0
   pounceRadius: 1
   pouncing: 0

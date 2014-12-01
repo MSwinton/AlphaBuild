@@ -25,30 +25,32 @@ public class PounceEnemy : Enemy {
 		if (transform.childCount < 3) {
 			Destroy (gameObject);
 		}
-		if (player == null) {
-			player = GameObject.FindGameObjectWithTag ("Player");
-			if(player != null){
-				playerInvisibility = player.GetComponent<Invisibility>();
-			}
-		}
-		if (player != null) {
 
-			cooldown -= Time.deltaTime;
-			if (shouldAggro ())
-				aggrod = true;
-			if (playerInvisibility.isVisible && inLoS () && cooldown < 0.0f && aggrod) {
+
+		cooldown -= Time.deltaTime;
+		if ( shouldAggro() ){
+//			if( !disturbed )		//TODO:  Make this double the aggro radius.
+			disturbed = true;
+			if( cooldown < 0.0f ){
 				destLocation = player.transform.position;
+				//If it was pouncing, stop.
 				if (pouncing) {
 					speedMod = speedMod / pounceMod;
 					pouncing = false;
 				}
+				//If it should start pouncing, do it.
+				if( Vector3.Distance (transform.position, player.transform.position) <= pounceRadius ){
+					pounce();
+				}
 			}
-			move (Time.deltaTime);
-			if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= pounceRadius)
-				pounce ();
-			if (Vector3.Distance (transform.position, player.transform.position) <= killRadius)
-				player.GetComponent<Movement> ().explode ();
 		}
+		move (Time.deltaTime);
+/*/		Physics2D.Linecast(transform.position, player.transform.position, 1 << LayerMask.NameToLayer("Wall"))
+		if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= pounceRadius)
+			pounce ();
+		if (Vector3.Distance (transform.position, player.transform.position) <= killRadius)
+			player.GetComponent<Movement> ().explode ();
+*/
 		setDest();
 	}
 	

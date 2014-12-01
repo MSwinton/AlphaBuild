@@ -1,11 +1,13 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Invisibility : MonoBehaviour {
 	public bool isVisible = true;
 	public float invisijuice = 5.0f;
 	public KeyCode keycode = KeyCode.Space;
+	public bool canInvis;
 	void Start () {
+		canInvis = true;
 		renderer.material.shader = Shader.Find("Transparent/Diffuse");
 		turnVisible();
 	}
@@ -16,7 +18,7 @@ public class Invisibility : MonoBehaviour {
 			invisijuice -= Time.deltaTime;
 		}
 		if (Input.GetKeyDown (keycode)) {
-			if(isVisible){
+			if(isVisible && canInvis){
 				turnInvisible();
 			}
 			else{

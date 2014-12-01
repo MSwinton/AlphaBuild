@@ -24,25 +24,15 @@ public class NormalRangedEnemy : Enemy {
 		}
 
 		cooldown -= Time.deltaTime;
-		if (player == null) {
-			player = GameObject.FindGameObjectWithTag ("Player");
-			if(player != null){
-				playerInvisibility = player.GetComponent<Invisibility>();
-			}
-		}
-		if (player != null) {
-			if (shouldAggro ())
-				aggrod = true;
-			if (playerInvisibility.isVisible && inLoS () && aggrod)
-				destLocation = player.transform.position;
-			move (Time.deltaTime);
-			if(aggrod){
-				if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= shootRadius)
-					shoot ();
-			}
-			
-			/*if (Vector3.Distance (transform.position, player.transform.position) <= killRadius)
-				player.GetComponent<Movement> ().explode ();*/
+
+		if (shouldAggro ())
+			aggrod = true;
+		if (playerInvisibility.isVisible && inLoS () && aggrod)
+			destLocation = player.transform.position;
+		move (Time.deltaTime);
+		if(aggrod){
+			if (playerInvisibility.isVisible && inLoS () && Vector3.Distance (transform.position, player.transform.position) <= shootRadius)
+				shoot ();
 		}
 		setDest();
 	}
