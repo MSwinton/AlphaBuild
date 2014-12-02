@@ -37,6 +37,9 @@ public abstract class Enemy : Splodeable {
 		else{
 			destLocation = this.transform.position;
 		}
+		//Set player
+		player = GameObject.FindGameObjectWithTag ("Player");
+		playerInvisibility = player.GetComponent<Invisibility>();
 	}
 
 
@@ -99,7 +102,7 @@ public abstract class Enemy : Splodeable {
 
 	//check if an object is in line of sight
 	public bool inLoS(){
-		return inLineOfSight;
+		return !Physics2D.Linecast(transform.position, player.transform.position, 1 << LayerMask.NameToLayer("Wall"));
 	}
 	public override void slow ()
 	{
@@ -108,19 +111,10 @@ public abstract class Enemy : Splodeable {
 	}
 	//Determines whether the enemy should aggro.
 	public bool shouldAggro( ){
-		if (!player) return false;
-		if(aggrod) return false;
+		if( !player ) return false;
+		//In Line of sight of player, player is visible, and in range of player
+		return ( inLoS() && playerInvisibility.isVisible && ((player.transform.position - this.transform.position).magnitude < aggroRadius) );
 
-		//In range of player.
-		if( inLoS() && playerInvisibility.isVisible && (player.transform.position - this.transform.position).magnitude < aggroRadius ) return true;
-
-		/*GameObject[] fellows = GameObject.FindGameObjectsWithTag("Enemy");
-		//In range of aggro'd enemy.
-		for(int i = 0; i < fellows.Length; i++){
-			Enemy e = fellows[i].GetComponent<Enemy>();
-			if (Vector3.Distance(gameObject.transform.position, e.gameObject.transform.position) < aggroRadius && e.aggrod ) return true; //&& inLoS (fellows[i])
-		}*/
-		return false;
 	}
 
 

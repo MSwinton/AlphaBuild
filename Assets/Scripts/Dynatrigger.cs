@@ -16,7 +16,6 @@ public class Dynatrigger : MonoBehaviour {
 	void OnTriggerEnter2D( Collider2D other ){
 		if( ((other.tag == "Player") || (other.tag == "Enemy")) && !activated){
 			bool playerOwned = false;
-			print("SD");
 			activated = true;
 			//First level
 			Transform psplodes = GameObject.FindGameObjectWithTag("Splodeables").transform;

@@ -7,9 +7,9 @@ public class Projectile : Enemy {
 	public float timer;
 	public void Start(){
 		transform.parent = GameObject.FindGameObjectWithTag ("Splodeables").transform;
-		baseSpeed = 3f;
+		baseSpeed = 5f;
 		speedMod = 1.0f;
-		timer = .2f;
+		timer = .07f;
 	}
 
 	void OnTriggerEnter2D( Collider2D other ){

@@ -16,21 +16,15 @@ public class BoringEnemy : Enemy {
 		if (transform.childCount < 2) {
 						Destroy (gameObject);
 				}
-		if (player == null) {
-			player = GameObject.FindGameObjectWithTag ("Player");
-			if(player != null){
-				playerInvisibility = player.GetComponent<Invisibility>();
-			}
+
+
+		if (shouldAggro ()){
+			if( !aggrod ) aggroRadius *= 2;
+			aggrod = true;
+			destLocation = player.transform.position;
 		}
-		if (player != null) {
-			if (shouldAggro ())
-				aggrod = true;
-			if (playerInvisibility.isVisible && inLoS () && aggrod)
-				destLocation = player.transform.position;
-			move (Time.deltaTime);
-			/*if (player && Vector3.Distance (transform.position, player.transform.position) <= killRadius) 
-				player.GetComponent<Movement> ().explode ();*/
-		} 
+		
+		move (Time.deltaTime);
 		setDest();
 	}
 

@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour {
 	public string next_level;
 	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone, blowup_mine, push_mine, slow_mine, invisijuice, dynaSwitch, dynaPile;
 	bool activeMinimap;
+	//For FPS
+	float runtime;
+	int frames;
 	void Start(){
 		level = new Level(inputFile);
 		splodeables = new GameObject();
@@ -20,6 +23,8 @@ public class GameManager : MonoBehaviour {
 		minimap.orthographicSize = level.tiles.Count/2;
 		activeMinimap = false;
 		minimap.gameObject.SetActive(false);
+		runtime = 0.0f;
+		frames = 0;
 	}
 	void playLevel(){
 		GameObject tile;
@@ -110,6 +115,13 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 	void Update(){
+		runtime += Time.deltaTime;
+		frames++;
+		if( runtime > 5 ){
+			print((float)frames/runtime);
+			frames = 0;
+			runtime = 0.0f;
+		}
 		if(Input.GetKeyDown(KeyCode.Q)){
 			if (activeMinimap == true){
 				minimap.gameObject.SetActive(false);

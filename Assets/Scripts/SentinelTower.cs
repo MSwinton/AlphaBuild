@@ -8,22 +8,20 @@ public class SentinelTower : Enemy {
 		aggroRadius = 2.8f;
 		aggrod = false;
 		destLocation = this.transform.position;
+		player = GameObject.FindGameObjectWithTag ("Player");
+		playerInvisibility = player.GetComponent<Invisibility>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		if (player == null) {
-			player = GameObject.FindGameObjectWithTag ("Player");
-			if(player != null){
-				playerInvisibility = player.GetComponent<Invisibility>();
-			}
+	public void OnTriggerEnter2D( Collider2D other ){
+		if( other.tag == "Player" ){
+			playerInvisibility.canInvis = false;
+			playerInvisibility.turnVisible();
 		}
-		if (player != null) {
-			if( Vector3.Distance(gameObject.transform.position, player.transform.position) < aggroRadius ) aggrod = true;
-			else aggrod = false;
-			
-			if( aggrod && inLoS() ) playerInvisibility.turnVisible();
-		}
+	}
+	
+	public void OnTriggerExit2D( Collider2D other ){
+		if( other.tag == "Player" )
+			playerInvisibility.canInvis = true;
 	}
 	
 	public override void explode(){

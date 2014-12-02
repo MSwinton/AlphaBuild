@@ -58,7 +58,7 @@ public class Movement : Splodeable {
 		else if (coll.gameObject.tag == "Enemy") this.explode();
 	}
 	public override void explode(){//what happens when you explode.
-		if( immunetime < 0 ){
+/*		if( immunetime < 0 ){
 			if( shielded ){
 				shielded = false;
 				immunetime = 3;
@@ -77,7 +77,7 @@ public class Movement : Splodeable {
 			else{
 				lose();
 			}
-		}
+		}*/
 	}
 	public override void slow(){//what happens when you get slowed down
 		speed *= .5f;
