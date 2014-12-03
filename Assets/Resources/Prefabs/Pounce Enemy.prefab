@@ -234,9 +234,8 @@ MonoBehaviour:
   aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
   maxAcceleration: 15
-  disturbed: 0
   cooldown: 0
-  pounceRadius: 1
+  pounceRadius: 2
   pouncing: 0
   pounceMod: 0
 --- !u!114 &11400004

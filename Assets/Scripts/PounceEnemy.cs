@@ -13,11 +13,11 @@ public class PounceEnemy : Enemy {
 		base.init();
 		baseSpeed *= 1.9f;
 		speedMod *= 1.0f;
-		pounceRadius = 2.0f;
+		pounceRadius = 3.0f;
 		killRadius = 0.9f;
 		aggrod = false;
 		cooldown = 0.0f;
-		pounceMod = 2.8f;
+		pounceMod = 3f;
 	}
 	
 	// Update is called once per frame

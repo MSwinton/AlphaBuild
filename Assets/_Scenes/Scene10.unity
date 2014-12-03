@@ -78,7 +78,7 @@ NavMeshSettings:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100002, guid: d5600f36b899520439742368b8d298c4, type: 2}
-  m_PrefabInternal: {fileID: 802346561}
+  m_PrefabInternal: {fileID: 1139123212}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 219093694}
@@ -97,7 +97,7 @@ Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 9200000, guid: d5600f36b899520439742368b8d298c4,
     type: 2}
-  m_PrefabInternal: {fileID: 802346561}
+  m_PrefabInternal: {fileID: 1139123212}
   m_GameObject: {fileID: 219093690}
   m_Enabled: 1
 --- !u!124 &219093692
@@ -105,7 +105,7 @@ Behaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 12400000, guid: d5600f36b899520439742368b8d298c4,
     type: 2}
-  m_PrefabInternal: {fileID: 802346561}
+  m_PrefabInternal: {fileID: 1139123212}
   m_GameObject: {fileID: 219093690}
   m_Enabled: 1
 --- !u!20 &219093693
@@ -113,7 +113,7 @@ Camera:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 2000000, guid: d5600f36b899520439742368b8d298c4,
     type: 2}
-  m_PrefabInternal: {fileID: 802346561}
+  m_PrefabInternal: {fileID: 1139123212}
   m_GameObject: {fileID: 219093690}
   m_Enabled: 1
   serializedVersion: 2
@@ -145,7 +145,7 @@ Camera:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400002, guid: d5600f36b899520439742368b8d298c4, type: 2}
-  m_PrefabInternal: {fileID: 802346561}
+  m_PrefabInternal: {fileID: 1139123212}
   m_GameObject: {fileID: 219093690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -20}
@@ -157,7 +157,7 @@ Transform:
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 100000, guid: d5600f36b899520439742368b8d298c4, type: 2}
-  m_PrefabInternal: {fileID: 802346561}
+  m_PrefabInternal: {fileID: 1139123212}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 536030615}
@@ -174,7 +174,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4,
     type: 2}
-  m_PrefabInternal: {fileID: 802346561}
+  m_PrefabInternal: {fileID: 1139123212}
   m_GameObject: {fileID: 536030613}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -186,7 +186,7 @@ MonoBehaviour:
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
-  exit: {fileID: 100002, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+  exit: {fileID: 100000, guid: 3b7b1a71b4660094ca00fe669889a4ee, type: 2}
   slow_enemy: {fileID: 100000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
   fast_enemy: {fileID: 100000, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
   ranged_enemy: {fileID: 100002, guid: 90ed8a54f347eb84fbf9ecf47c8e5261, type: 2}
@@ -203,7 +203,7 @@ MonoBehaviour:
 Transform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
-  m_PrefabInternal: {fileID: 802346561}
+  m_PrefabInternal: {fileID: 1139123212}
   m_GameObject: {fileID: 536030613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -212,7 +212,7 @@ Transform:
   - {fileID: 219093694}
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!1001 &802346561
+--- !u!1001 &1139123212
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -250,14 +250,6 @@ Prefab:
     - target: {fileID: 400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
-      propertyPath: inputFile
-      value: Scene10
-      objectReference: {fileID: 0}
-    - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
-      propertyPath: next_level
-      value: Scene11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5600f36b899520439742368b8d298c4, type: 2}
