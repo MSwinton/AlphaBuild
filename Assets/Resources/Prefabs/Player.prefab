@@ -39,7 +39,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &400000
 Transform:
   m_ObjectHideFlags: 1
@@ -161,6 +161,7 @@ MonoBehaviour:
   pushSpeed: 8
   acceleration: 20
   dieAudio: {fileID: 100000, guid: 9a92320f7960bc04997b49b043e641cb, type: 2}
+  shielded: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -191,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blastRadius: 2
-  detonateRadius: .699999988
+  detonateRadius: 1
   numMines: 0
   splodeables: {fileID: 0}
   keycode: 50
@@ -211,6 +212,7 @@ MonoBehaviour:
   isVisible: 1
   invisijuice: 0
   keycode: 32
+  canInvis: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

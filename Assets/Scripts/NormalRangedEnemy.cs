@@ -6,15 +6,16 @@ public class NormalRangedEnemy : Enemy {
 	public GameObject bullet;
 	public float cooldown;
 	public float shootRadius;
-	
+	public float reloadTime;
 	void Start () {
 		base.init();
 		baseSpeed *=1.25f;
 		speedMod *= 1.0f;
-		shootRadius = 4.0f;
+		shootRadius = 8.0f;
 		killRadius = 0.8f;
 		aggrod = false;
 		cooldown = 0.0f;
+		reloadTime = .5f;
 	}
 	
 	// Update is called once per frame
@@ -49,7 +50,7 @@ public class NormalRangedEnemy : Enemy {
 			newB.transform.position = transform.position;
 			Projectile script = newB.GetComponent<Projectile> ();
 			script.direction = (player.transform.position - transform.position).normalized;
-			cooldown = 2.0f;
+			cooldown = reloadTime;
 		}
 	}
 }

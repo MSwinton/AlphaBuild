@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +201,6 @@ MonoBehaviour:
   aggrod: 0
   velocity: {x: 0, y: 0, z: 0}
   maxAcceleration: 20
-  disturbed: 0
   bullet: {fileID: 100000, guid: eeabc00e88b4b244eb67a06ad0aa41e6, type: 2}
   cooldown: 0
   shootRadius: 0
