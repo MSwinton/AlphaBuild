@@ -13,11 +13,11 @@ public class HomeMenuController : MonoBehaviour {
 
 		if (GUI.Button(new Rect(Screen.width / 2 - Screen.width / 6, Screen.height / 2 - Screen.height / 8 , Screen.width / 3, Screen.height / 4 ),"", 
 		               startButtonStyle)){
-			
+			Application.LoadLevel ("Easy1"); 
 		}
 		if (GUI.Button(new Rect(Screen.width / 2 - Screen.width / 6, Screen.height / 4 * 3 - Screen.height / 16 , Screen.width / 3, Screen.height / 4),"", 
 		               tutorialButtonStyle)){
-			
+			Application.LoadLevel ("Tutorial1-1"); 
 		}
 	}
 }
