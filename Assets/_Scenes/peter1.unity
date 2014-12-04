@@ -181,6 +181,10 @@ Prefab:
       propertyPath: inputFile
       value: Level5-4
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
+      propertyPath: next_level
+      value: FastEnemyGetsStuck
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5600f36b899520439742368b8d298c4, type: 2}
   m_RootGameObject: {fileID: 1441071690}
@@ -469,7 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputFile: Level5-4
-  next_level: Scene11
+  next_level: FastEnemyGetsStuck
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
@@ -577,8 +581,8 @@ Camera:
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -.5
-    y: -.5
+    x: 0
+    y: 0
     width: 1
     height: 1
   near clip plane: .300000012

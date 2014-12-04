@@ -12,6 +12,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Easy1.unity
   - enabled: 1
+    path: Assets/_Scenes/Scene13.unity
+  - enabled: 1
     path: Assets/_Scenes/Scene102.unity
   - enabled: 0
     path: Assets/_Scenes/LoadScene.unity
@@ -20,11 +22,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Scenes/DeadZoneTutorial.unity
   - enabled: 1
-    path: Assets/_Scenes/FastEnemyGetsStuck.unity
-  - enabled: 1
     path: Assets/_Scenes/KillThemForTheMines.unity
   - enabled: 0
     path: Assets/_Scenes/SymmetricFastEnemies.unity
+  - enabled: 1
+    path: Assets/_Scenes/Scene12.unity
+  - enabled: 1
+    path: Assets/_Scenes/Scene9.unity
+  - enabled: 1
+    path: Assets/_Scenes/Peter2.unity
+  - enabled: 1
+    path: Assets/_Scenes/peter1.unity
+  - enabled: 1
+    path: Assets/_Scenes/FastEnemyGetsStuck.unity
   - enabled: 1
     path: Assets/_Scenes/HardestShitEver.unity
   - enabled: 1
@@ -69,19 +79,11 @@ EditorBuildSettings:
     path: Assets/_Scenes/Tutorial/Tutorial4-1.unity
   - enabled: 1
     path: Assets/_Scenes/Tutorial/TutorialCompleted.unity
-  - enabled: 1
-    path: Assets/_Scenes/Scene12.unity
-  - enabled: 1
-    path: Assets/_Scenes/Scene9.unity
-  - enabled: 1
-    path: Assets/_Scenes/Peter2.unity
-  - enabled: 1
-    path: Assets/_Scenes/peter1.unity
   - enabled: 0
     path: Assets/_Scenes/SirSplodesAlot.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Scene10.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Scenes/Scene11.unity
   - enabled: 1
     path: Assets/_Scenes/peterSuperDifficultLevel.unity

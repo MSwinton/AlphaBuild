@@ -159,7 +159,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
       propertyPath: inputFile
-      value: Scene12
+      value: Scene9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
+      propertyPath: next_level
+      value: HardestShitEver
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5600f36b899520439742368b8d298c4, type: 2}
@@ -207,8 +211,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61be3d0bb35113449825503013e854da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputFile: Scene12
-  next_level: Scene11
+  inputFile: Scene9
+  next_level: HardestShitEver
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
@@ -272,8 +276,8 @@ Camera:
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -.5
-    y: -.5
+    x: 0
+    y: 0
     width: 1
     height: 1
   near clip plane: .300000012
