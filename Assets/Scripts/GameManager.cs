@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour {
 	Level level;
 	GameObject splodeables;
 	Camera minimap;
+	Camera mainCamera;
 	public string inputFile;
 	public string next_level;
 	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone, blowup_mine, push_mine, slow_mine, invisijuice, dynaSwitch, dynaPile;
@@ -19,8 +20,9 @@ public class GameManager : MonoBehaviour {
 		splodeables.transform.parent = this.transform;
 		playLevel();
 		minimap = GameObject.FindGameObjectWithTag("Minimap").GetComponent<Camera>();
-		minimap.transform.position = new Vector3(level.tiles.Count/2,level.tiles[0].Count/2,-30);
-		minimap.orthographicSize = level.tiles.Count/2;
+		mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+		minimap.transform.position = new Vector3(level.tiles[0].Count/2,level.tiles.Count/2,-30);
+		minimap.orthographicSize = level.tiles.Count;
 		activeMinimap = false;
 		minimap.gameObject.SetActive(false);
 		runtime = 0.0f;
@@ -125,9 +127,11 @@ public class GameManager : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Q)){
 			if (activeMinimap == true){
 				minimap.gameObject.SetActive(false);
+				mainCamera.gameObject.SetActive(true);
 			}
 			else{
 				minimap.gameObject.SetActive(true);
+				mainCamera.gameObject.SetActive(false);
 			}
 			activeMinimap = !activeMinimap;
 		}

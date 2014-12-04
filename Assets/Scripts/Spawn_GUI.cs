@@ -91,7 +91,7 @@ public class Spawn_GUI : MonoBehaviour {
 			button_Offset += Screen.width * button_Size;
 			if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.09f),"", 
 			               homeButtonStyle)){
-				
+				Application.LoadLevel ("HomeMenu"); 
 			}
 		}
 		
