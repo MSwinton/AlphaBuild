@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour {
 	Camera mainCamera;
 	public string inputFile;
 	public string next_level;
-	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone, blowup_mine, push_mine, slow_mine, invisijuice, dynaSwitch, dynaPile;
+	public GameObject floorTile, wallTile, player, exit, slow_enemy, fast_enemy, ranged_enemy, pounce_enemy, vision_tower, dead_zone, blowup_mine, push_mine, slow_mine, invisijuice, dynaSwitch, dynaPile, helmet;
 	bool activeMinimap;
 	//For FPS
 	float runtime;
@@ -100,6 +100,10 @@ public class GameManager : MonoBehaviour {
 		for(int i=0;i<level.slowMinePositions.Count;i++){
 			o = Instantiate (slow_mine, level.slowMinePositions[i], Quaternion.identity)as GameObject;
 			o.transform.name = "Slow Mine";
+		}
+		for(int i=0;i<level.helmetPositions.Count;i++){
+			o = Instantiate (helmet, level.helmetPositions[i], Quaternion.identity)as GameObject;
+			o.transform.name = "Helmet";
 		}
 		for(int i=0;i<level.invisijuicePositions.Count;i++){
 			o = Instantiate (invisijuice, level.invisijuicePositions[i], Quaternion.identity)as GameObject;

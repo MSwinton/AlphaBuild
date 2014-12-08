@@ -33,7 +33,15 @@ public class Collectable : MonoBehaviour {
 				other.GetComponent<Invisibility>().invisijuice += amount;
 			}
 			if( thingName.ToLower() == "shield" ){
+				GameObject helmetObj = GameObject.FindGameObjectWithTag("Helmet");
+				if(helmetObj != null){
+					Destroy(helmetObj);
+				}
 				other.GetComponent<Movement>().shielded = true;
+				other.GetComponent<Movement>().immunetime = 0;
+				GameObject helmObj = Instantiate(Resources.Load ("Prefabs/Helmet"),Vector3.zero,Quaternion.identity) as GameObject;
+				helmObj.transform.parent = other.transform;
+				helmObj.transform.localPosition = new Vector3(0,0,-.1f);
 			}
 			Destroy(gameObject);
 		}

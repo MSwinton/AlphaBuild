@@ -20,6 +20,7 @@ public class Level{
 	public List<Vector3> pushMinePositions;
 	public List<Vector3> blowupMinePositions;
 	public List<Vector3> slowMinePositions;
+	public List<Vector3> helmetPositions;
 	public List<Vector3> invisijuicePositions;
 	public List<Vector3> dynaSwitchPositions;
 	public List<List<Vector3>> slowEnemyPatrol;

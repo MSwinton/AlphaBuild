@@ -8,21 +8,37 @@ public class Movement : Splodeable {
 	public float pushSpeed = 8;
 	protected Vector3 pushedVelocity;
 	protected bool pushed;
+	public GameObject helmetObj;
 	public float acceleration = 15;
 	public GameObject dieAudio;
-	protected float immunetime;
+	public float immunetime;
+	private int frameno;
 	public bool shielded;
 	bool lost;
 	void Start(){
 		speed = baseSpeed;
 		lost = false;
+		immunetime = 0;
+		frameno = 0;
 	}
 	void Update(){
 		if(lost){
 			return;
 		}
 		float t = Time.deltaTime;
-		immunetime -= t;
+		if(immunetime > 0){
+			immunetime -= t;
+			frameno = (frameno + 1) % 5;
+			if(frameno < 2){
+				helmetObj.transform.localPosition = new Vector3(helmetObj.transform.localPosition.x,helmetObj.transform.localPosition.y,2);
+			}
+			else{
+				helmetObj.transform.localPosition = new Vector3(helmetObj.transform.localPosition.x,helmetObj.transform.localPosition.y,-.1f);
+			}
+		}
+		if(helmetObj != null && !shielded && immunetime <= 0){
+			Destroy(helmetObj);
+		}
 		if(slowTime > 0){
 			slowTime -= t;
 		}
@@ -58,16 +74,17 @@ public class Movement : Splodeable {
 		else if (coll.gameObject.tag == "Enemy") this.explode();
 	}
 	public override void explode(){//what happens when you explode.
-		if( immunetime < 0 ){
+		if( immunetime <= 0 ){
 			if( shielded ){
 				shielded = false;
 				immunetime = 3;
+				helmetObj = GameObject.FindGameObjectWithTag("Helmet");
 				//Push Part
 				GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 				foreach( GameObject enemy in enemies ){
 					if( Vector3.Distance(enemy.transform.position, transform.position) < 5 ){
 						Vector3 r = enemy.transform.position - this.transform.position;
-						enemy.GetComponentInParent<Enemy>().push(r.normalized * 11 / r.magnitude);
+						enemy.GetComponentInParent<Enemy>().push(r.normalized * 20 / r.magnitude);
 					}
 				}
 				GameObject audioObject;
@@ -80,7 +97,7 @@ public class Movement : Splodeable {
 		}
 	}
 	public override void slow(){//what happens when you get slowed down
-		speed *= .5f;
+		return;
 	}
 	public override void push(Vector3 p){
 		pushed = true;
