@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour {
 				mainCamera.gameObject.SetActive(true);
 			}
 			else{
+				print (minimap);
 				minimap.gameObject.SetActive(true);
 				mainCamera.gameObject.SetActive(false);
 			}

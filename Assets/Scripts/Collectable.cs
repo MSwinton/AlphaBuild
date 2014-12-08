@@ -17,20 +17,26 @@ public class Collectable : MonoBehaviour {
 	public int amount = 3;
 	void OnTriggerEnter2D( Collider2D other ){
 		if( other.tag == "Player" ){ 
+			GameObject cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+			Spawn_GUI gui = cameraObject.GetComponent<Spawn_GUI>();
 			if( thingName.ToLower() == "flash" ){
 				other.GetComponent<PlaceFlashMine>().numMines += amount;
 			}
 			if( thingName.ToLower() == "blowup" ){
 				other.GetComponent<PlaceBlowupMine>().numMines += amount;
+				gui.blowupBlingTimer = 1.0f;
 			}
 			if( thingName.ToLower() == "slow" ){
 				other.GetComponent<PlaceSlowMine>().numMines += amount;
+				gui.slowBlingTimer = 1.0f;
 			}
 			if( thingName.ToLower() == "push" ){
 				other.GetComponent<PlacePushMine>().numMines += amount;
+				gui.pushBlingTimer = 1.0f;
 			}
 			if( thingName.ToLower() == "invisijuice" ){
 				other.GetComponent<Invisibility>().invisijuice += amount;
+				gui.invisBlingTimer = 1.0f;
 			}
 			if( thingName.ToLower() == "shield" ){
 				GameObject helmetObj = GameObject.FindGameObjectWithTag("Helmet");
