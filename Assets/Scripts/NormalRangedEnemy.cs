@@ -51,6 +51,9 @@ public class NormalRangedEnemy : Enemy {
 			Projectile script = newB.GetComponent<Projectile> ();
 			script.direction = (player.transform.position - transform.position).normalized;
 			cooldown = reloadTime;
+			GameObject audioObject;
+			audioObject = Resources.Load<GameObject>("Prefabs/BulletSound");
+			Instantiate(audioObject);
 		}
 	}
 }
