@@ -127,6 +127,7 @@ MonoBehaviour:
   invisijuice: {fileID: 100000, guid: a4c89b6b2572fa046acf28ef79709aba, type: 2}
   dynaSwitch: {fileID: 100000, guid: e9a97ed3f6bdc0648a6d1c18a3af53b1, type: 2}
   dynaPile: {fileID: 100000, guid: f1ddf8aaf080786448d80e8ff9aa5d97, type: 2}
+  helmet: {fileID: 100000, guid: db1cd3e856fe8024fb72717ff92608df, type: 2}
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

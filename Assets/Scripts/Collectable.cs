@@ -15,25 +15,44 @@ using System.Collections;
 public class Collectable : MonoBehaviour {
 	public string thingName;
 	public int amount = 3;
+	GameObject audioObject;
+	void Start(){
+		audioObject = Resources.Load<GameObject>("Prefabs/Bling");
+	}
 	void OnTriggerEnter2D( Collider2D other ){
 		if( other.tag == "Player" ){ 
+			Instantiate(audioObject);
+			GameObject cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
+			Spawn_GUI gui = cameraObject.GetComponent<Spawn_GUI>();
 			if( thingName.ToLower() == "flash" ){
 				other.GetComponent<PlaceFlashMine>().numMines += amount;
 			}
 			if( thingName.ToLower() == "blowup" ){
 				other.GetComponent<PlaceBlowupMine>().numMines += amount;
+				gui.blowupBlingTimer = 1.0f;
 			}
 			if( thingName.ToLower() == "slow" ){
 				other.GetComponent<PlaceSlowMine>().numMines += amount;
+				gui.slowBlingTimer = 1.0f;
 			}
 			if( thingName.ToLower() == "push" ){
 				other.GetComponent<PlacePushMine>().numMines += amount;
+				gui.pushBlingTimer = 1.0f;
 			}
 			if( thingName.ToLower() == "invisijuice" ){
 				other.GetComponent<Invisibility>().invisijuice += amount;
+				gui.invisBlingTimer = 1.0f;
 			}
 			if( thingName.ToLower() == "shield" ){
+				GameObject helmetObj = GameObject.FindGameObjectWithTag("Helmet");
+				if(helmetObj != null){
+					Destroy(helmetObj);
+				}
 				other.GetComponent<Movement>().shielded = true;
+				other.GetComponent<Movement>().immunetime = 0;
+				GameObject helmObj = Instantiate(Resources.Load ("Prefabs/Helmet"),Vector3.zero,Quaternion.identity) as GameObject;
+				helmObj.transform.parent = other.transform;
+				helmObj.transform.localPosition = new Vector3(0,0,-.1f);
 			}
 			Destroy(gameObject);
 		}
