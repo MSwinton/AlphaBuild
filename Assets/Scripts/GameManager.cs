@@ -127,11 +127,13 @@ public class GameManager : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Q)){
 			if (activeMinimap == true){
 				minimap.gameObject.SetActive(false);
-				mainCamera.gameObject.SetActive(true);
+				//mainCamera.gameObject.SetActive(true);
+				mainCamera.transform.localRotation = Quaternion.Euler (new Vector3(0,0,0));
 			}
 			else{
 				minimap.gameObject.SetActive(true);
-				mainCamera.gameObject.SetActive(false);
+				//mainCamera.gameObject.SetActive(false);
+				mainCamera.transform.localRotation = Quaternion.Euler (new Vector3(180,0,0));
 			}
 			activeMinimap = !activeMinimap;
 		}
