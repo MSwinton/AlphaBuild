@@ -15,8 +15,13 @@ using System.Collections;
 public class Collectable : MonoBehaviour {
 	public string thingName;
 	public int amount = 3;
+	GameObject audioObject;
+	void Start(){
+		audioObject = Resources.Load<GameObject>("Prefabs/Bling");
+	}
 	void OnTriggerEnter2D( Collider2D other ){
 		if( other.tag == "Player" ){ 
+			Instantiate(audioObject);
 			GameObject cameraObject = GameObject.FindGameObjectWithTag("MainCamera");
 			Spawn_GUI gui = cameraObject.GetComponent<Spawn_GUI>();
 			if( thingName.ToLower() == "flash" ){

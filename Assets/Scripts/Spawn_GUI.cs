@@ -8,6 +8,11 @@
  * Shiying Zheng
  * 12/3/14
  * Made custom buttons
+ * 12/8 
+ * Made menu item light up when pick up corresponding collectible
+ * 
+ * Check this out to adjust font size according to screen size
+ * http://answers.unity3d.com/questions/699456/dynamic-font-size.html
  */
 //=====================================================================================================================================================
 using UnityEngine;
@@ -36,15 +41,17 @@ public class Spawn_GUI : MonoBehaviour {
 	
 	public GUIStyle homeButtonStyle;
 	
-	public GUIStyle textStyle;
+	GUIStyle textStyle; //current textStyle only works with 1024*768
 	
 	public int index = 1; //current weapon selected, use this public int to know selected weapon.
 	
 	GameObject player;
-	
+
 	//public float invis;
 
 	void Start(){
+		textStyle = new GUIStyle ();
+		textStyle.fontSize = Screen.width/30;
 		pushBlingTimer = 0;
 		slowBlingTimer = 0;
 		blowupBlingTimer = 0;
