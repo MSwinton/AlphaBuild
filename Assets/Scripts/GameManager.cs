@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour {
 		runtime += Time.deltaTime;
 		frames++;
 		if( runtime > 5 ){
-			print((float)frames/runtime);
+			//print((float)frames/runtime);
 			frames = 0;
 			runtime = 0.0f;
 		}
