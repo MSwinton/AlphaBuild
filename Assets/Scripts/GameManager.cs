@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour {
 			o.GetComponent<Enemy>().pathPoints = level.rangedEnemyPatrol[i];
 		}
 		for(int i=0;i<level.towerPositions.Count;i++){
-			o = Instantiate (vision_tower, level.towerPositions[i], Quaternion.identity)as GameObject;
+			o = Instantiate (vision_tower, new Vector3(level.towerPositions[i].x,level.towerPositions[i].y,-.01f), Quaternion.identity)as GameObject;
 			o.transform.name = "Vision Tower";
 			o.transform.parent = splodeables.transform;
 		}

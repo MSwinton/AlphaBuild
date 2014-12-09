@@ -7,7 +7,6 @@ public class PounceEnemy : Enemy {
 	public float pounceRadius;
 	public bool pouncing;
 	public float pounceMod;
-
 	void Start () {
 		pouncing = false;
 		base.init();

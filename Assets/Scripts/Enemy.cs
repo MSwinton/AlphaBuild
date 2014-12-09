@@ -22,7 +22,7 @@ public abstract class Enemy : Splodeable {
 	private bool pushed;
 	private Vector3 pushedVelocity;
 	private float slowTimer;
-
+	private SpriteRenderer[] renderers;
 	//public abstract void Update();
 	public void init(){
 		if(pathPoints!=null){
@@ -40,6 +40,10 @@ public abstract class Enemy : Splodeable {
 		//Set player
 		player = GameObject.FindGameObjectWithTag ("Player");
 		playerInvisibility = player.GetComponent<Invisibility>();
+		renderers = this.GetComponentsInChildren<SpriteRenderer>();
+		if(renderers == null){
+			renderers = this.GetComponents<SpriteRenderer>();
+		}
 	}
 
 
@@ -50,10 +54,14 @@ public abstract class Enemy : Splodeable {
 	public void move(float t){
 		if(speedMod < 1){
 			slowTimer -= t;
+			if (slowTimer < 0){
+				speedMod = 1;
+				for(int i=0;i<renderers.Length;i++){
+					renderers[i].material.color = Color.white;
+				}
+			}
 		}
-		if (slowTimer < 0){
-			speedMod = 1;
-		}
+		
 		Vector3 curLocation = transform.position;
 		float distToDest = (destLocation - curLocation).magnitude;
 		Vector3 direction = (destLocation - curLocation).normalized;
@@ -108,6 +116,12 @@ public abstract class Enemy : Splodeable {
 	{
 		speedMod *= 0.2f;
 		slowTimer = slowTime;
+		if(this.name == "Bullet(Clone)"){
+			return;
+		}
+		for(int i=0;i<renderers.Length;i++){
+			renderers[i].material.color = Color.blue;
+		}
 	}
 	//Determines whether the enemy should aggro.
 	public bool shouldAggro( ){
