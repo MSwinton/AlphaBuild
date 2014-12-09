@@ -116,21 +116,22 @@ public class Spawn_GUI : MonoBehaviour {
 		width_Offset = Screen.width/8;
 		height_Offset = 0;
 		
-		float button_Offset = 10; //offset between buttons
+		float button_Offset = (float)Screen.width/100; //offset between buttons as number of units
 		
-		float button_Size = 0.12f; //button size
+		float button_Size = 0.12f; //button size, as a ratio of screen.width
 		
 		float background_Box_Size = 0.75f;
 		
 		float label_width_offset = Screen.width * button_Size * 2/3;
 		
-		float label_height_offset = 0.04f * Screen.height;
+		float label_height_offset = 0.035f * Screen.height;
 		
 		GUI.Box (new Rect(width_Offset,height_Offset,Screen.width * background_Box_Size,Screen.height/9),""); //Background Box
 		//----------------------------------------------------------------------------------------------------------------------------------------------------
 		
 		if(player != null){
 			//-------------------push mine-------------------------------
+			print (width_Offset + button_Offset);
 			GUI.Label (new Rect (width_Offset + button_Offset , height_Offset +10 , Screen.width * button_Size, Screen.height * 0.09f), 
 				           togglePushTexture());
 			button_Offset += Screen.width * button_Size; //next button moved over by the width of buttons
@@ -140,6 +141,7 @@ public class Spawn_GUI : MonoBehaviour {
 
 
 			//------------------slow mine--------------------------------
+			print (width_Offset + button_Offset);
 			GUI.Label (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.09f),
 				           toggleSlowTexture());
 			button_Offset += Screen.width * button_Size;
