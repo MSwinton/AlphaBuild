@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: cf5c507e6eaa88949b06ff39fca3ae01
+guid: 2ce9db11eef98e24e8504500dd9c05e8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: slow count bling
+    21300000: invis count bling
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
