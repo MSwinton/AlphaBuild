@@ -172,6 +172,7 @@ MonoBehaviour:
   invisijuice: {fileID: 100000, guid: a4c89b6b2572fa046acf28ef79709aba, type: 2}
   dynaSwitch: {fileID: 100000, guid: e9a97ed3f6bdc0648a6d1c18a3af53b1, type: 2}
   dynaPile: {fileID: 100000, guid: f1ddf8aaf080786448d80e8ff9aa5d97, type: 2}
+  helmet: {fileID: 100000, guid: db1cd3e856fe8024fb72717ff92608df, type: 2}
 --- !u!4 &159461990
 Transform:
   m_ObjectHideFlags: 0
@@ -344,9 +345,20 @@ MonoBehaviour:
   width_Offset: 0
   height_Offset: 0
   pushMineTexture: {fileID: 2800000, guid: 33b95329c379a6743bdf4ad5d2c17f9b, type: 3}
+  pushMineBlingTexture: {fileID: 2800000, guid: 1603795ca2a54ff409095f90aa023b8d,
+    type: 3}
+  pushBlingTimer: 0
   slowMineTexture: {fileID: 2800000, guid: 50640b9c82e93e846be5b68a5b520cd5, type: 3}
+  slowMineBlingTexture: {fileID: 2800000, guid: cf5c507e6eaa88949b06ff39fca3ae01,
+    type: 3}
+  slowBlingTimer: 0
   blowupMineTexture: {fileID: 2800000, guid: 8002e62aef7c6394a97de43aa500e52b, type: 3}
+  blowupMineBlingTexture: {fileID: 2800000, guid: 7addfec32beed4e40be08996aee7a241,
+    type: 3}
+  blowupBlingTimer: 0
   invisTexture: {fileID: 2800000, guid: ef810fba489466c449dccab450076013, type: 3}
+  invisBlingTexture: {fileID: 2800000, guid: 6dd636539b0f4ba4da264b0da945747b, type: 3}
+  invisBlingTimer: 0
   homeButtonStyle:
     m_Name: Home Button Style
     m_Normal:
@@ -395,65 +407,6 @@ MonoBehaviour:
       m_Bottom: 0
     m_Font: {fileID: 0}
     m_FontSize: 0
-    m_FontStyle: 0
-    m_Alignment: 0
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
-  textStyle:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0
