@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour {
 			o.GetComponent<Enemy>().pathPoints = level.rangedEnemyPatrol[i];
 		}
 		for(int i=0;i<level.towerPositions.Count;i++){
-			o = Instantiate (vision_tower, level.towerPositions[i], Quaternion.identity)as GameObject;
+			o = Instantiate (vision_tower, new Vector3(level.towerPositions[i].x,level.towerPositions[i].y,-.01f), Quaternion.identity)as GameObject;
 			o.transform.name = "Vision Tower";
 			o.transform.parent = splodeables.transform;
 		}
@@ -131,14 +131,22 @@ public class GameManager : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Q)){
 			if (activeMinimap == true){
 				minimap.gameObject.SetActive(false);
+<<<<<<< HEAD
 				//mainCamera.gameObject.SetActive(true);
 				mainCamera.transform.localRotation = Quaternion.Euler (new Vector3(0,0,0));
+=======
+				mainCamera.gameObject.transform.localEulerAngles = new Vector3(0,0,0);
+>>>>>>> 8158cb1fe9762c8fd65e36a0fcb156199a03d6ba
 			}
 			else{
 				print (minimap);
 				minimap.gameObject.SetActive(true);
+<<<<<<< HEAD
 				//mainCamera.gameObject.SetActive(false);
 				mainCamera.transform.localRotation = Quaternion.Euler (new Vector3(180,0,0));
+=======
+				mainCamera.gameObject.transform.localEulerAngles = new Vector3(0,180,0);
+>>>>>>> 8158cb1fe9762c8fd65e36a0fcb156199a03d6ba
 			}
 			activeMinimap = !activeMinimap;
 		}

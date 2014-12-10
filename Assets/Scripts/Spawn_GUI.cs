@@ -25,23 +25,28 @@ public class Spawn_GUI : MonoBehaviour {
 	
 	public Texture pushMineTexture;
 	public Texture pushMineBlingTexture;
+	public Texture pushMineZeroTexture;
 	public float pushBlingTimer;
 
 	public Texture slowMineTexture;
 	public Texture slowMineBlingTexture;
+	public Texture slowMineZeroTexture;
 	public float slowBlingTimer;
 
 	public Texture blowupMineTexture;
 	public Texture blowupMineBlingTexture;
+	public Texture blowupMineZeroTexture;
 	public float blowupBlingTimer;
 
 	public Texture invisTexture;
 	public Texture invisBlingTexture;
+	public Texture invisZeroTexture;
 	public float invisBlingTimer;
 	
 	public GUIStyle homeButtonStyle;
 	
 	GUIStyle textStyle; //current textStyle only works with 1024*768
+	GUIStyle invisTextStyle; //used for invisijuice label
 	
 	public int index = 1; //current weapon selected, use this public int to know selected weapon.
 	
@@ -52,6 +57,8 @@ public class Spawn_GUI : MonoBehaviour {
 	void Start(){
 		textStyle = new GUIStyle ();
 		textStyle.fontSize = Screen.width/30;
+		invisTextStyle = new GUIStyle ();
+		invisTextStyle.fontSize = Screen.width/45;
 		pushBlingTimer = 0;
 		slowBlingTimer = 0;
 		blowupBlingTimer = 0;
@@ -74,6 +81,9 @@ public class Spawn_GUI : MonoBehaviour {
 	}
 
 	Texture togglePushTexture(){
+		if (player.GetComponent<PlacePushMine>().numMines <= 0){
+			return pushMineZeroTexture;
+		}
 		if (pushBlingTimer <= 0){
 			return pushMineTexture;
 		}
@@ -83,6 +93,9 @@ public class Spawn_GUI : MonoBehaviour {
 	}
 
 	Texture toggleBlowupTexture(){
+		if (player.GetComponent<PlaceBlowupMine>().numMines <= 0){
+			return blowupMineZeroTexture;
+		}
 		if (blowupBlingTimer <= 0){
 			return blowupMineTexture;
 		}
@@ -92,6 +105,9 @@ public class Spawn_GUI : MonoBehaviour {
 	}
 
 	Texture toggleSlowTexture(){
+		if (player.GetComponent<PlaceSlowMine>().numMines <= 0){
+			return slowMineZeroTexture;
+		}
 		if (slowBlingTimer <= 0){
 			return slowMineTexture;
 		}
@@ -101,6 +117,9 @@ public class Spawn_GUI : MonoBehaviour {
 	}
 
 	Texture toggleInvisTexture(){
+		if (player.GetComponent<Invisibility>().invisijuice <= 0){
+			return invisZeroTexture;
+		}
 		if (invisBlingTimer <= 0){
 			return invisTexture;
 		}
@@ -114,7 +133,7 @@ public class Spawn_GUI : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag("Player");
 		
 		width_Offset = Screen.width/8;
-		height_Offset = 0;
+		height_Offset = Screen.height/80;
 		
 		float button_Offset = (float)Screen.width/100; //offset between buttons as number of units
 		
@@ -126,13 +145,13 @@ public class Spawn_GUI : MonoBehaviour {
 		
 		float label_height_offset = 0.035f * Screen.height;
 		
-		GUI.Box (new Rect(width_Offset,height_Offset,Screen.width * background_Box_Size,Screen.height/9),""); //Background Box
+		GUI.Box (new Rect(width_Offset,0,Screen.width * background_Box_Size,Screen.height/9),""); //Background Box
 		//----------------------------------------------------------------------------------------------------------------------------------------------------
 		
 		if(player != null){
 			//-------------------push mine-------------------------------
 			
-			GUI.Label (new Rect (width_Offset + button_Offset , height_Offset +10 , Screen.width * button_Size, Screen.height * 0.09f), 
+			GUI.Label (new Rect (width_Offset + button_Offset , height_Offset , Screen.width * button_Size, Screen.height * 0.09f), 
 				           togglePushTexture());
 			button_Offset += Screen.width * button_Size; //next button moved over by the width of buttons
 			//number of push mines
@@ -142,7 +161,7 @@ public class Spawn_GUI : MonoBehaviour {
 
 			//------------------slow mine--------------------------------
 			
-			GUI.Label (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.09f),
+			GUI.Label (new Rect (width_Offset + button_Offset, height_Offset , Screen.width * button_Size, Screen.height * 0.09f),
 				           toggleSlowTexture());
 			button_Offset += Screen.width * button_Size;
 			//number of slow mines
@@ -151,7 +170,7 @@ public class Spawn_GUI : MonoBehaviour {
 
 
 			//------------------blowup mine------------------------
-			GUI.Label (new Rect (width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.09f),
+			GUI.Label (new Rect (width_Offset + button_Offset, height_Offset, Screen.width * button_Size, Screen.height * 0.09f),
 				           toggleBlowupTexture());
 			button_Offset += Screen.width * button_Size;
 			//number of blowup mines
@@ -161,15 +180,15 @@ public class Spawn_GUI : MonoBehaviour {
 
 			//-----------------invis-------------------------------
 			button_Offset += Screen.width * button_Size;
-			GUI.Label(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.09f), 
+			GUI.Label(new Rect(width_Offset + button_Offset, height_Offset, Screen.width * button_Size, Screen.height * 0.09f), 
 				          toggleInvisTexture());
 			//amount of invisijuice left
-			GUI.Label (new Rect(width_Offset + label_width_offset + button_Offset - 10, label_height_offset, 20, 20), 
-			           "" + Mathf.Round (player.GetComponent<Invisibility>().invisijuice * 10) / 10, textStyle);
+			GUI.Label (new Rect(width_Offset + label_width_offset + button_Offset - 10, label_height_offset * 1.2f, 20, 20), 
+			           "" + Mathf.Round (player.GetComponent<Invisibility>().invisijuice * 10) / 10, invisTextStyle);
 
 			
 			button_Offset += Screen.width * button_Size;
-			if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset +10 , Screen.width * button_Size, Screen.height * 0.09f),"", 
+			if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset, Screen.width * button_Size, Screen.height * 0.09f),"", 
 			               homeButtonStyle)){
 				Application.LoadLevel ("HomeMenu"); 
 			}
