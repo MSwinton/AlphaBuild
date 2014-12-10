@@ -131,12 +131,12 @@ public class GameManager : MonoBehaviour {
 		if(Input.GetKeyDown(KeyCode.Q)){
 			if (activeMinimap == true){
 				minimap.gameObject.SetActive(false);
-				mainCamera.gameObject.SetActive(true);
+				mainCamera.gameObject.transform.localEulerAngles = new Vector3(0,0,0);
 			}
 			else{
 				print (minimap);
 				minimap.gameObject.SetActive(true);
-				mainCamera.gameObject.SetActive(false);
+				mainCamera.gameObject.transform.localEulerAngles = new Vector3(0,180,0);
 			}
 			activeMinimap = !activeMinimap;
 		}
