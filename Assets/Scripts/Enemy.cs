@@ -57,7 +57,9 @@ public abstract class Enemy : Splodeable {
 			if (slowTimer < 0){
 				speedMod = 1;
 				for(int i=0;i<renderers.Length;i++){
-					renderers[i].material.color = Color.white;
+					if(renderers[i] != null){ 
+						renderers[i].material.color = Color.white;
+					}
 				}
 			}
 		}
@@ -120,7 +122,9 @@ public abstract class Enemy : Splodeable {
 			return;
 		}
 		for(int i=0;i<renderers.Length;i++){
-			renderers[i].material.color = Color.blue;
+			if(renderers[i] != null){
+				renderers[i].material.color = Color.blue;
+			}
 		}
 	}
 	//Determines whether the enemy should aggro.
