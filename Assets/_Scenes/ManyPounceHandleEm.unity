@@ -111,7 +111,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
       propertyPath: next_level
@@ -223,7 +223,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ac69a392bb810d49a8b9ca25cf09efe, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ac69a392bb810d49a8b9ca25cf09efe, type: 2}
@@ -323,6 +323,7 @@ GameObject:
   - 81: {fileID: 2040714175}
   - 114: {fileID: 2040714174}
   - 114: {fileID: 2040714173}
+  - 224: {fileID: 2040714180}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -345,19 +346,24 @@ MonoBehaviour:
   width_Offset: 0
   height_Offset: 0
   pushMineTexture: {fileID: 2800000, guid: 33b95329c379a6743bdf4ad5d2c17f9b, type: 3}
-  pushMineBlingTexture: {fileID: 2800000, guid: 1603795ca2a54ff409095f90aa023b8d,
+  pushMineBlingTexture: {fileID: 2800000, guid: 2830d38b7089584438b0c2b2d3705d7f,
     type: 3}
+  pushMineZeroTexture: {fileID: 2800000, guid: 74328726d50d11947acc7c36e871137b, type: 3}
   pushBlingTimer: 0
   slowMineTexture: {fileID: 2800000, guid: 50640b9c82e93e846be5b68a5b520cd5, type: 3}
-  slowMineBlingTexture: {fileID: 2800000, guid: cf5c507e6eaa88949b06ff39fca3ae01,
+  slowMineBlingTexture: {fileID: 2800000, guid: ea017cd76ac139543a484e3c65408542,
     type: 3}
+  slowMineZeroTexture: {fileID: 2800000, guid: 29d31e5efc8843b4fb32c7a8cead8672, type: 3}
   slowBlingTimer: 0
   blowupMineTexture: {fileID: 2800000, guid: 8002e62aef7c6394a97de43aa500e52b, type: 3}
-  blowupMineBlingTexture: {fileID: 2800000, guid: 7addfec32beed4e40be08996aee7a241,
+  blowupMineBlingTexture: {fileID: 2800000, guid: 727ed2f778f326b4ba2311fd2ce85f0c,
+    type: 3}
+  blowupMineZeroTexture: {fileID: 2800000, guid: c70d965c044263a4699c4666f6560406,
     type: 3}
   blowupBlingTimer: 0
   invisTexture: {fileID: 2800000, guid: ef810fba489466c449dccab450076013, type: 3}
-  invisBlingTexture: {fileID: 2800000, guid: 6dd636539b0f4ba4da264b0da945747b, type: 3}
+  invisBlingTexture: {fileID: 2800000, guid: 2ce9db11eef98e24e8504500dd9c05e8, type: 3}
+  invisZeroTexture: {fileID: 2800000, guid: 402264cac84e0324d8106f4ba2fd630e, type: 3}
   invisBlingTimer: 0
   homeButtonStyle:
     m_Name: Home Button Style
@@ -466,7 +472,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: .448529422, g: .458423465, b: .458423465, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -502,6 +508,18 @@ Transform:
   - {fileID: 2048140616}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!224 &2040714180
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 22400000, guid: 2ac69a392bb810d49a8b9ca25cf09efe,
+    type: 2}
+  m_PrefabInternal: {fileID: 1554380915}
+  m_GameObject: {fileID: 2040714172}
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_Position: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1 &2048140615
 GameObject:
   m_ObjectHideFlags: 0
