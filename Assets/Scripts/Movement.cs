@@ -84,7 +84,7 @@ public class Movement : Splodeable {
 				foreach( GameObject enemy in enemies ){
 					if( Vector3.Distance(enemy.transform.position, transform.position) < 5 ){
 						Vector3 r = enemy.transform.position - this.transform.position;
-						enemy.GetComponentInParent<Enemy>().push(r.normalized * 20 / r.magnitude);
+						enemy.GetComponentInParent<Enemy>().push(r.normalized * 10 / r.magnitude);
 					}
 				}
 				GameObject audioObject;

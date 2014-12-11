@@ -149,3 +149,7 @@ EditorBuildSettings:
     path: Assets/_Scenes/WinChallenge.unity
   - enabled: 1
     path: Assets/_Scenes/EasyNew1.unity
+  - enabled: 1
+    path: Assets/_Scenes/Scene15.unity
+  - enabled: 1
+    path: Assets/_Scenes/Explosive.unity

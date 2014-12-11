@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputFile: HardestShitEver
-  next_level: 
+  next_level: Scene9
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
@@ -163,7 +163,7 @@ Transform:
   m_PrefabInternal: {fileID: 1327159124}
   m_GameObject: {fileID: 440245929}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1842415655}
@@ -394,7 +394,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
       propertyPath: next_level
-      value: 
+      value: Scene9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5600f36b899520439742368b8d298c4, type: 2}
@@ -497,7 +497,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ac69a392bb810d49a8b9ca25cf09efe, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2ac69a392bb810d49a8b9ca25cf09efe, type: 2}
       propertyPath: m_LocalRotation.x
