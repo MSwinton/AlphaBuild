@@ -74,6 +74,85 @@ NavMeshSettings:
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
   m_NavMesh: {fileID: 0}
+--- !u!1 &265347666
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100002, guid: d5600f36b899520439742368b8d298c4, type: 2}
+  m_PrefabInternal: {fileID: 1255435163}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 265347667}
+  - 20: {fileID: 265347670}
+  - 124: {fileID: 265347669}
+  - 92: {fileID: 265347668}
+  m_Layer: 0
+  m_Name: Minimap Camera
+  m_TagString: Minimap
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &265347667
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400002, guid: d5600f36b899520439742368b8d298c4, type: 2}
+  m_PrefabInternal: {fileID: 1255435163}
+  m_GameObject: {fileID: 265347666}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1592058535}
+  m_RootOrder: 0
+--- !u!92 &265347668
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 9200000, guid: d5600f36b899520439742368b8d298c4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1255435163}
+  m_GameObject: {fileID: 265347666}
+  m_Enabled: 1
+--- !u!124 &265347669
+Behaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 12400000, guid: d5600f36b899520439742368b8d298c4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1255435163}
+  m_GameObject: {fileID: 265347666}
+  m_Enabled: 1
+--- !u!20 &265347670
+Camera:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 2000000, guid: d5600f36b899520439742368b8d298c4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1255435163}
+  m_GameObject: {fileID: 265347666}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 3
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 1
+  orthographic size: 0
+  m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_HDR: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: .0219999999
 --- !u!1 &817154576
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,16 +188,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width_Offset: 0
   height_Offset: 0
-  style:
-    m_Name: 
+  pushMineTexture: {fileID: 2800000, guid: 33b95329c379a6743bdf4ad5d2c17f9b, type: 3}
+  pushMineBlingTexture: {fileID: 2800000, guid: 1603795ca2a54ff409095f90aa023b8d,
+    type: 3}
+  pushBlingTimer: 0
+  slowMineTexture: {fileID: 2800000, guid: 50640b9c82e93e846be5b68a5b520cd5, type: 3}
+  slowMineBlingTexture: {fileID: 2800000, guid: cf5c507e6eaa88949b06ff39fca3ae01,
+    type: 3}
+  slowBlingTimer: 0
+  blowupMineTexture: {fileID: 2800000, guid: 8002e62aef7c6394a97de43aa500e52b, type: 3}
+  blowupMineBlingTexture: {fileID: 2800000, guid: 7addfec32beed4e40be08996aee7a241,
+    type: 3}
+  blowupBlingTimer: 0
+  invisTexture: {fileID: 2800000, guid: ef810fba489466c449dccab450076013, type: 3}
+  invisBlingTexture: {fileID: 2800000, guid: 6dd636539b0f4ba4da264b0da945747b, type: 3}
+  invisBlingTimer: 0
+  homeButtonStyle:
+    m_Name: Home Button Style
     m_Normal:
-      m_Background: {fileID: 0}
+      m_Background: {fileID: 2800000, guid: b57588aa1fb1d5e4594271f7475918c6, type: 3}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Hover:
-      m_Background: {fileID: 0}
+      m_Background: {fileID: 2800000, guid: c9ad28d644ddb9c40abaaf1e857679f7, type: 3}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Active:
-      m_Background: {fileID: 0}
+      m_Background: {fileID: 2800000, guid: c1588445978a7204483ab0195e0523ef, type: 3}
       m_TextColor: {r: 0, g: 0, b: 0, a: 1}
     m_Focused:
       m_Background: {fileID: 0}
@@ -580,7 +674,7 @@ MonoBehaviour:
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
-  exit: {fileID: 100002, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+  exit: {fileID: 100000, guid: 3b7b1a71b4660094ca00fe669889a4ee, type: 2}
   slow_enemy: {fileID: 100000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
   fast_enemy: {fileID: 100000, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
   ranged_enemy: {fileID: 100002, guid: 90ed8a54f347eb84fbf9ecf47c8e5261, type: 2}
@@ -591,6 +685,9 @@ MonoBehaviour:
   push_mine: {fileID: 100000, guid: 429fc63f5d88820449d74442493ec6bc, type: 2}
   slow_mine: {fileID: 100000, guid: f940846b049e89d478bc199203de15fe, type: 2}
   invisijuice: {fileID: 100000, guid: a4c89b6b2572fa046acf28ef79709aba, type: 2}
+  dynaSwitch: {fileID: 100000, guid: e9a97ed3f6bdc0648a6d1c18a3af53b1, type: 2}
+  dynaPile: {fileID: 100000, guid: f1ddf8aaf080786448d80e8ff9aa5d97, type: 2}
+  helmet: {fileID: 100000, guid: db1cd3e856fe8024fb72717ff92608df, type: 2}
 --- !u!4 &1592058535
 Transform:
   m_ObjectHideFlags: 0
@@ -600,6 +697,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 265347667}
   m_Father: {fileID: 0}
   m_RootOrder: 0
