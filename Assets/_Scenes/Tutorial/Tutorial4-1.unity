@@ -119,11 +119,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 60615334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.43947697, y: 6.34992313, z: .189999998}
-  m_LocalScale: {x: .223014086, y: .22301428, z: 1}
+  m_LocalPosition: {x: 2.5, y: 6.00868225, z: .189999998}
+  m_LocalScale: {x: .267330974, y: .267331332, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
 --- !u!1001 &244938671
 Prefab:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: d5600f36b899520439742368b8d298c4, type: 2}
       propertyPath: next_level
-      value: TutorialCompleted
+      value: Easy1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d5600f36b899520439742368b8d298c4, type: 2}
@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputFile: Tutorial4-1
-  next_level: TutorialCompleted
+  next_level: Easy1
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
@@ -349,6 +349,7 @@ MonoBehaviour:
   invisijuice: {fileID: 100000, guid: a4c89b6b2572fa046acf28ef79709aba, type: 2}
   dynaSwitch: {fileID: 100000, guid: e9a97ed3f6bdc0648a6d1c18a3af53b1, type: 2}
   dynaPile: {fileID: 100000, guid: f1ddf8aaf080786448d80e8ff9aa5d97, type: 2}
+  helmet: {fileID: 100000, guid: db1cd3e856fe8024fb72717ff92608df, type: 2}
 --- !u!4 &830908314
 Transform:
   m_ObjectHideFlags: 0
@@ -362,133 +363,6 @@ Transform:
   - {fileID: 361345378}
   m_Father: {fileID: 0}
   m_RootOrder: 1
---- !u!1001 &919560673
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-      propertyPath: m_RootMapOrder
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-      propertyPath: m_RootOrder
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-  m_RootGameObject: {fileID: 971648284}
-  m_IsPrefabParent: 0
-  m_IsExploded: 1
---- !u!1 &971648284
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 100000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-  m_PrefabInternal: {fileID: 919560673}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 971648288}
-  - 20: {fileID: 971648287}
-  - 124: {fileID: 971648286}
-  - 92: {fileID: 971648285}
-  m_Layer: 0
-  m_Name: Minimap Camera
-  m_TagString: Minimap
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!92 &971648285
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9200000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0,
-    type: 2}
-  m_PrefabInternal: {fileID: 919560673}
-  m_GameObject: {fileID: 971648284}
-  m_Enabled: 1
---- !u!124 &971648286
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 12400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0,
-    type: 2}
-  m_PrefabInternal: {fileID: 919560673}
-  m_GameObject: {fileID: 971648284}
-  m_Enabled: 1
---- !u!20 &971648287
-Camera:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2000000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0,
-    type: 2}
-  m_PrefabInternal: {fileID: 919560673}
-  m_GameObject: {fileID: 971648284}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 3
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: -.5
-    y: -.5
-    width: 1
-    height: 1
-  near clip plane: .300000012
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 0
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_HDR: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: .0219999999
---- !u!4 &971648288
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 400000, guid: 67f9cc2fe0ad89b4b92a98b187dcc1c0, type: 2}
-  m_PrefabInternal: {fileID: 919560673}
-  m_GameObject: {fileID: 971648284}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
 --- !u!1 &1922367508
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,9 +476,20 @@ MonoBehaviour:
   width_Offset: 0
   height_Offset: 0
   pushMineTexture: {fileID: 2800000, guid: 33b95329c379a6743bdf4ad5d2c17f9b, type: 3}
+  pushMineBlingTexture: {fileID: 2800000, guid: 1603795ca2a54ff409095f90aa023b8d,
+    type: 3}
+  pushBlingTimer: 0
   slowMineTexture: {fileID: 2800000, guid: 50640b9c82e93e846be5b68a5b520cd5, type: 3}
+  slowMineBlingTexture: {fileID: 2800000, guid: cf5c507e6eaa88949b06ff39fca3ae01,
+    type: 3}
+  slowBlingTimer: 0
   blowupMineTexture: {fileID: 2800000, guid: 8002e62aef7c6394a97de43aa500e52b, type: 3}
+  blowupMineBlingTexture: {fileID: 2800000, guid: 7addfec32beed4e40be08996aee7a241,
+    type: 3}
+  blowupBlingTimer: 0
   invisTexture: {fileID: 2800000, guid: ef810fba489466c449dccab450076013, type: 3}
+  invisBlingTexture: {fileID: 2800000, guid: 6dd636539b0f4ba4da264b0da945747b, type: 3}
+  invisBlingTimer: 0
   homeButtonStyle:
     m_Name: Home Button Style
     m_Normal:
@@ -653,65 +538,6 @@ MonoBehaviour:
       m_Bottom: 0
     m_Font: {fileID: 0}
     m_FontSize: 0
-    m_FontStyle: 0
-    m_Alignment: 0
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
-  textStyle:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0
