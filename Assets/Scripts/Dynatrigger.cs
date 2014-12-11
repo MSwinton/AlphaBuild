@@ -18,6 +18,7 @@ public class Dynatrigger : MonoBehaviour {
 			bool playerOwned = false;
 			activated = true;
 			//First level
+			Instantiate(Resources.Load ("Prefabs/Boom"),Vector3.zero,Quaternion.identity);
 			Transform psplodes = GameObject.FindGameObjectWithTag("Splodeables").transform;
 			foreach( Transform child in psplodes ){
 				checkNSlay(child);

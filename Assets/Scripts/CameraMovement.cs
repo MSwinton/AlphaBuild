@@ -14,7 +14,7 @@ public class CameraMovement : MonoBehaviour {
 
 	}
 	IEnumerator loseIn2() {
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		Application.LoadLevel (Application.loadedLevelName);
 	}
 	// Update is called once per frame

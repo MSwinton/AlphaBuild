@@ -18,6 +18,7 @@ public class Exclam : MonoBehaviour {
 			renderer.enabled = true;
 			timer = activeTime;
 			print(timer);
+			Instantiate(Resources.Load ("Prefabs/AggroSound"),Vector3.zero,Quaternion.identity);
 		}
 		if(timer > 0){
 			timer -= Time.deltaTime;
