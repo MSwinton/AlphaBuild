@@ -217,8 +217,8 @@ Camera:
   m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: -.5
-    y: -.5
+    x: 0
+    y: 0
     width: 1
     height: 1
   near clip plane: .300000012
@@ -297,7 +297,70 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   width_Offset: 0
   height_Offset: 0
-  style:
+  pushMineTexture: {fileID: 2800000, guid: 33b95329c379a6743bdf4ad5d2c17f9b, type: 3}
+  slowMineTexture: {fileID: 2800000, guid: 50640b9c82e93e846be5b68a5b520cd5, type: 3}
+  blowupMineTexture: {fileID: 2800000, guid: 8002e62aef7c6394a97de43aa500e52b, type: 3}
+  invisTexture: {fileID: 2800000, guid: ef810fba489466c449dccab450076013, type: 3}
+  homeButtonStyle:
+    m_Name: Home Button Style
+    m_Normal:
+      m_Background: {fileID: 2800000, guid: b57588aa1fb1d5e4594271f7475918c6, type: 3}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 2800000, guid: c9ad28d644ddb9c40abaaf1e857679f7, type: 3}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 2800000, guid: c1588445978a7204483ab0195e0523ef, type: 3}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 0}
+    m_FontSize: 0
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
+  textStyle:
     m_Name: 
     m_Normal:
       m_Background: {fileID: 0}
@@ -343,8 +406,8 @@ MonoBehaviour:
       m_Right: 0
       m_Top: 0
       m_Bottom: 0
-    m_Font: {fileID: 0}
-    m_FontSize: 0
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 24
     m_FontStyle: 0
     m_Alignment: 0
     m_WordWrap: 0
@@ -473,7 +536,7 @@ MonoBehaviour:
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
-  exit: {fileID: 100002, guid: b4a3e7f5c6d43a841853ed97fdd27455, type: 2}
+  exit: {fileID: 100000, guid: 3b7b1a71b4660094ca00fe669889a4ee, type: 2}
   slow_enemy: {fileID: 100000, guid: 105e0e040d02ff54b994d9227d6bcd58, type: 2}
   fast_enemy: {fileID: 100000, guid: 9614a04210aa6f7478e0b3530a551738, type: 2}
   ranged_enemy: {fileID: 100002, guid: 90ed8a54f347eb84fbf9ecf47c8e5261, type: 2}
