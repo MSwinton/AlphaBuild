@@ -8,6 +8,7 @@ public class BlowupMine : Mine {
 	{
 		explosion = Resources.Load <GameObject>("Prefabs/fire");
 		Instantiate(explosion,transform.position,Quaternion.identity);
+		Instantiate(Resources.Load("Prefabs/Boom"),transform.position,Quaternion.identity);
 		s.explode ();
 	}
 }
