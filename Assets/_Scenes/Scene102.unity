@@ -181,8 +181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61be3d0bb35113449825503013e854da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputFile: Scene101
-  next_level: KillThemForTheMines
+  inputFile: Tutorial2-6
+  next_level: Tutorial2-6
   floorTile: {fileID: 100000, guid: 827665ade5ff6044681d9af4837efa86, type: 2}
   wallTile: {fileID: 100000, guid: 37ac1dd791c93424884bca7946e9ea66, type: 2}
   player: {fileID: 100000, guid: 2df546c43c1d91f4e88c70abccd4a7bf, type: 2}
