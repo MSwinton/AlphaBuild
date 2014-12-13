@@ -1,8 +1,8 @@
 fileFormatVersion: 2
-guid: bd0cc4fba6a78ca4db351a958e28e4ea
+guid: 71c0895a10e1a6149a052235f6f83b7a
 TextureImporter:
   fileIDToRecycleName:
-    21300000: slow enemy wheel
+    21300000: control button hover
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +26,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
