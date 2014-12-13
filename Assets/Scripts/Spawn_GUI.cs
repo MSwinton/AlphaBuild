@@ -44,13 +44,15 @@ public class Spawn_GUI : MonoBehaviour {
 	public float invisBlingTimer;
 	
 	public GUIStyle homeButtonStyle;
+	public GUIStyle controlButtonStyle;
+	public Texture helpTexture;
 	
 	GUIStyle textStyle; //current textStyle only works with 1024*768
 	GUIStyle invisTextStyle; //used for invisijuice label
 	
-	public int index = 1; //current weapon selected, use this public int to know selected weapon.
-	
 	GameObject player;
+
+	bool helpLabelDisplay;
 
 	//public float invis;
 
@@ -63,6 +65,7 @@ public class Spawn_GUI : MonoBehaviour {
 		slowBlingTimer = 0;
 		blowupBlingTimer = 0;
 		invisBlingTimer = 0;
+		helpLabelDisplay = false;
 	}
 
 	void Update(){
@@ -179,19 +182,39 @@ public class Spawn_GUI : MonoBehaviour {
 
 
 			//-----------------invis-------------------------------
-			button_Offset += Screen.width * button_Size;
+			//button_Offset += Screen.width * button_Size;
 			GUI.Label(new Rect(width_Offset + button_Offset, height_Offset, Screen.width * button_Size, Screen.height * 0.09f), 
 				          toggleInvisTexture());
+			button_Offset += Screen.width * button_Size;
 			//amount of invisijuice left
-			GUI.Label (new Rect(width_Offset + label_width_offset + button_Offset - 10, label_height_offset * 1.2f, 20, 20), 
+			GUI.Label (new Rect(label_width_offset + button_Offset - 10, label_height_offset * 1.2f, 20, 20), 
 			           "" + Mathf.Round (player.GetComponent<Invisibility>().invisijuice * 10) / 10, invisTextStyle);
 
 			
-			button_Offset += Screen.width * button_Size;
+			//button_Offset += Screen.width * button_Size;
 			if (GUI.Button(new Rect(width_Offset + button_Offset, height_Offset, Screen.width * button_Size, Screen.height * 0.09f),"", 
 			               homeButtonStyle)){
 				Application.LoadLevel ("HomeMenu"); 
 			}
+
+			button_Offset += Screen.width * button_Size;
+			if (GUI.Button(new Rect(width_Offset + button_Offset + 10, height_Offset, Screen.width * button_Size, Screen.height * 0.09f),"", 
+			               controlButtonStyle)){
+				if (helpLabelDisplay){
+					helpLabelDisplay = false;
+					Time.timeScale = 1;
+				}
+				else{
+					helpLabelDisplay = true;
+					Time.timeScale = 0;
+				}
+			}
+
+			if (helpLabelDisplay){
+				GUI.Label(new Rect(Screen.width / 4, Screen.height / 4, Screen.width*0.5f, Screen.height*0.5f), 
+				          helpTexture);
+			}
+
 		}
 		
 	}
