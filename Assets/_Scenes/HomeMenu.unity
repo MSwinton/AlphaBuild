@@ -508,6 +508,7 @@ MonoBehaviour:
     m_StretchWidth: 1
     m_StretchHeight: 0
   gameName: {fileID: 2800000, guid: 564f9b40bf130de4e9c018ea678d0bdf, type: 3}
+  musicCredit: {fileID: 2800000, guid: bede3a27dea474e47baeec4cb7320c63, type: 3}
 --- !u!4 &1806615110
 Transform:
   m_ObjectHideFlags: 0
