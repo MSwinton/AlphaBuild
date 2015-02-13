@@ -55,3 +55,4 @@ public class SplittingEnemy_Base : Enemy {
 		speedMod *= .3f;
 	}
 }
+ 

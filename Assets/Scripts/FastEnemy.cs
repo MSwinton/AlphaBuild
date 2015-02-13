@@ -34,4 +34,4 @@ public class FastEnemy : Enemy {
 		Destroy (this);
 	}
 	
-}
+} 

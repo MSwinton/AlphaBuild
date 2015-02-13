@@ -9,3 +9,4 @@ public class Dynapile : MonoBehaviour {
 		GameObject.Destroy(this.gameObject);
 	}
 }
+ 

@@ -7,3 +7,4 @@ public class PlacePushMine : PlaceMine<PushMine> {
 		splodeables = GameObject.FindWithTag("Splodeables");
 	}
 }
+ 

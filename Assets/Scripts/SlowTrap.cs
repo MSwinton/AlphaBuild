@@ -12,3 +12,4 @@ public class SlowTrap : Mine {
 		s.slow ();
 	}
 }
+ 

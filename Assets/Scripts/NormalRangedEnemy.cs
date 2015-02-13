@@ -57,3 +57,4 @@ public class NormalRangedEnemy : Enemy {
 		}
 	}
 }
+ 

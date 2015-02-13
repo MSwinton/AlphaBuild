@@ -36,3 +36,4 @@ public class PlaceMine<T> : MonoBehaviour where T : Mine {
 		mineScript.transform.position = position;
 	}
 }
+ 

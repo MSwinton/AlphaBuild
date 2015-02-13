@@ -38,4 +38,4 @@ public class Invisibility : MonoBehaviour {
 		renderer.material.color = new Color(5,5,5,1);
 		isVisible = true;
 	}
-}
+} 

@@ -7,3 +7,4 @@ public class PlaceBlowupMine : PlaceMine<BlowupMine> {
 		splodeables = GameObject.FindWithTag("Splodeables");
 	}
 }
+ 

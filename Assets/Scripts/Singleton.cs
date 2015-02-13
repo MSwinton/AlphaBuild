@@ -33,4 +33,4 @@ public class Singleton : MonoBehaviour {
 		audio.Play ();
 		DontDestroyOnLoad(this.gameObject);
 	}
-}
+} 

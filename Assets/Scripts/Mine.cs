@@ -41,3 +41,4 @@ public abstract class Mine : MonoBehaviour {
 		Destroy (this);
 	}
 }
+ 

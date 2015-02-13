@@ -7,3 +7,4 @@ public class PlaceSlowMine : PlaceMine<SlowTrap> {
 		splodeables = GameObject.FindWithTag("Splodeables");
 	}
 }
+ 

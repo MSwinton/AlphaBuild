@@ -8,3 +8,4 @@ public class FlashMine : Mine {
 
 	}
 }
+ 

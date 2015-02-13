@@ -12,3 +12,4 @@ public class BlowupMine : Mine {
 		s.explode ();
 	}
 }
+ 

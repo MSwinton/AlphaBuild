@@ -10,3 +10,4 @@ public class ClickTutorial : MonoBehaviour {
 			Application.LoadLevel(nextLevel);
 	}
 }
+ 

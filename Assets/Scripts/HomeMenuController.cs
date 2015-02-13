@@ -20,3 +20,4 @@ public class HomeMenuController : MonoBehaviour {
 		GUI.Label(new Rect(Screen.width / 4, Screen.height / 8 * 7 , Screen.width / 2, Screen.height / 8 ), musicCredit);
 	}
 }
+ 
